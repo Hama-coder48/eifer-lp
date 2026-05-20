@@ -31,20 +31,26 @@
     <div class="hero-bg">
       <div class="flame-left"></div>
       <div class="flame-right"></div>
+      <!-- Baseball diamond decoration -->
+      <div class="diamond-bg">
+        <div class="diamond-shape"></div>
+      </div>
+      <!-- Embers -->
       <div class="ember e1"></div>
       <div class="ember e2"></div>
       <div class="ember e3"></div>
       <div class="ember e4"></div>
       <div class="ember e5"></div>
+      <div class="ember e6"></div>
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-inner">
-      <p class="hero-label">HIRAKATA, OSAKA × BASEBALL × SINCE 2017</p>
-      <h1 class="hero-title">EIFER</h1>
-      <p class="hero-kana">ア イ フ ァ ー</p>
+      <p class="hero-label reveal-up">HIRAKATA, OSAKA &nbsp;⚾&nbsp; BASEBALL &nbsp;⚾&nbsp; SINCE 2017</p>
+      <h1 class="hero-title glitch" data-text="EIFER">EIFER</h1>
+      <p class="hero-kana reveal-up">ア &nbsp; イ &nbsp; フ &nbsp; ァ &nbsp; ー</p>
       <div class="hero-line"></div>
-      <p class="hero-tagline">友達と積み重ねる、一球一球。<br><span>枚方から、本気で燃える。</span></p>
-      <div class="hero-actions">
+      <p class="hero-tagline reveal-up">友達と積み重ねる、一球一球。<br><span>枚方から、本気で燃える。</span></p>
+      <div class="hero-actions reveal-up">
         <a href="#contact" class="btn-fire">対戦申し込み</a>
         <a href="#about" class="btn-ghost">チームを知る</a>
       </div>
@@ -55,26 +61,40 @@
     </div>
   </section>
 
-  <!-- NUMBERS -->
+  <!-- BASEBALL STITCH DIVIDER -->
+  <div class="stitch-divider">
+    <svg viewBox="0 0 1200 24" preserveAspectRatio="none">
+      <path d="M0 12 Q 100 2 200 12 Q 300 22 400 12 Q 500 2 600 12 Q 700 22 800 12 Q 900 2 1000 12 Q 1100 22 1200 12" stroke="#cc1800" stroke-width="1.5" fill="none" opacity="0.5"/>
+      <circle cx="100" cy="6" r="2" fill="#cc1800" opacity="0.6"/>
+      <circle cx="300" cy="18" r="2" fill="#cc1800" opacity="0.6"/>
+      <circle cx="500" cy="6" r="2" fill="#cc1800" opacity="0.6"/>
+      <circle cx="700" cy="18" r="2" fill="#cc1800" opacity="0.6"/>
+      <circle cx="900" cy="6" r="2" fill="#cc1800" opacity="0.6"/>
+      <circle cx="1100" cy="18" r="2" fill="#cc1800" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <!-- SCOREBOARD -->
   <section class="numbers">
+    <div class="scoreboard-label">— EIFER RECORDS —</div>
     <div class="container">
       <div class="numbers-grid">
-        <div class="number-item">
-          <span class="number-val">2017</span>
+        <div class="number-item animate-in">
+          <span class="number-val" data-target="2017" data-type="year">2017</span>
           <span class="number-label">FOUNDED</span>
         </div>
         <div class="number-divider"></div>
-        <div class="number-item">
-          <span class="number-val">25</span>
+        <div class="number-item animate-in">
+          <span class="number-val" data-target="25" data-type="count">0</span>
           <span class="number-label">AVG. AGE</span>
         </div>
         <div class="number-divider"></div>
-        <div class="number-item">
-          <span class="number-val">1,000<span class="n-plus">+</span></span>
+        <div class="number-item animate-in">
+          <span class="number-val" data-target="1000" data-type="count">0<span class="n-plus">+</span></span>
           <span class="number-label">FOLLOWERS</span>
         </div>
         <div class="number-divider"></div>
-        <div class="number-item">
+        <div class="number-item animate-in">
           <span class="number-val red-val">赤</span>
           <span class="arrow-val">→</span>
           <span class="number-val">黒</span>
@@ -84,12 +104,23 @@
     </div>
   </section>
 
+  <!-- BASEBALL STITCH DIVIDER -->
+  <div class="stitch-divider flip">
+    <svg viewBox="0 0 1200 24" preserveAspectRatio="none">
+      <path d="M0 12 Q 100 22 200 12 Q 300 2 400 12 Q 500 22 600 12 Q 700 2 800 12 Q 900 22 1000 12 Q 1100 2 1200 12" stroke="#cc1800" stroke-width="1.5" fill="none" opacity="0.5"/>
+      <circle cx="200" cy="12" r="2" fill="#cc1800" opacity="0.5"/>
+      <circle cx="400" cy="12" r="2" fill="#cc1800" opacity="0.5"/>
+      <circle cx="600" cy="12" r="2" fill="#cc1800" opacity="0.5"/>
+      <circle cx="800" cy="12" r="2" fill="#cc1800" opacity="0.5"/>
+      <circle cx="1000" cy="12" r="2" fill="#cc1800" opacity="0.5"/>
+    </svg>
+  </div>
+
   <!-- ABOUT -->
   <section class="about" id="about">
     <div class="container">
       <div class="about-grid">
-        <div class="about-media">
-          <!-- 写真1: インスタから追加予定 -->
+        <div class="about-media animate-in from-left">
           <div class="photo-main photo-placeholder" id="photo1">
             <span>TEAM PHOTO</span>
             <p>写真追加予定</p>
@@ -99,12 +130,22 @@
             <div class="photo-sub photo-placeholder" id="photo3"><span>TEAM</span></div>
           </div>
         </div>
-        <div class="about-content">
+        <div class="about-content animate-in from-right">
           <p class="section-eyebrow">ABOUT</p>
           <h2 class="section-heading">それでも、<br>帰ってくる。</h2>
           <p class="about-lead">住む場所が変わった。働く場所が変わった。連絡も昔ほど頻繁じゃない。それでも「試合あるで」の一言で、同じ顔が枚方に戻ってくる。</p>
           <p class="about-body">2017年、大阪府枚方市の幼馴染と同級生が立ち上げた草野球チーム。全員2000年生まれ。甲子園を目指したやつもいれば、グローブの締め方を知らなかったやつもいる。それでもユニフォームを着れば同じだ——勝ちたいという気持ちだけは、誰も妥協しない。</p>
           <p class="about-body">勝ったり負けたりを繰り返してきた。悔しい試合もあった。それでも続けてきたのは、野球が目的じゃないからだ。<strong>このメンバーと、この場所で、この瞬間を積み重ねること</strong>——それがEIFERの正体だ。</p>
+          <!-- Baseball diamond infield positions -->
+          <div class="field-mini animate-in">
+            <div class="field-diamond">
+              <span class="base home">⚾</span>
+              <span class="base first">1B</span>
+              <span class="base second">2B</span>
+              <span class="base third">3B</span>
+            </div>
+            <p class="field-label">EIFER FIELD</p>
+          </div>
           <a href="#contact" class="btn-fire">一緒に戦いませんか？</a>
         </div>
       </div>
@@ -113,39 +154,40 @@
 
   <!-- HISTORY: RED → BLACK -->
   <section class="history" id="history">
+    <div class="history-bg-text">HISTORY</div>
     <div class="container">
-      <p class="section-eyebrow center">HISTORY</p>
-      <h2 class="section-heading center">赤から、黒へ。</h2>
-      <p class="history-sub center">創設の炎を胸に、より鋭く、より強く。</p>
+      <p class="section-eyebrow center animate-in">HISTORY</p>
+      <h2 class="section-heading center animate-in">赤から、黒へ。</h2>
+      <p class="history-sub center animate-in">創設の炎を胸に、より鋭く、より強く。</p>
       <div class="history-timeline">
-        <div class="timeline-item">
+        <div class="timeline-item animate-in from-left">
           <div class="timeline-dot red-dot"></div>
           <div class="timeline-content">
             <p class="timeline-year">2017</p>
             <h3>RED — 2017年、17歳。</h3>
-            <p>「野球でまた集まれる場所を作りたい」——それだけだった。大義名分も、勝利への執念も、あとからついてきた。枚方と八幡の境目で、赤いユニフォームを着た17歳たちが集まった。強豪校出身者も、グローブの付け方を知らない奴も、同じチームとして初めてグラウンドに立った年。</p>
+            <p>「野球でまた集まれる場所を作りたい」——それだけだった。枚方と八幡の境目で、赤いユニフォームを着た17歳たちが集まった。強豪校出身者も、グローブの付け方を知らない奴も、同じチームとして初めてグラウンドに立った年。</p>
           </div>
         </div>
         <div class="timeline-connector">
           <div class="fire-line"></div>
         </div>
-        <div class="timeline-item">
+        <div class="timeline-item animate-in from-right">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <p class="timeline-year">2020〜</p>
-            <h3>GROWTH — 散っても、帰ってくる</h3>
-            <p>進学、就職、引っ越し。メンバーは関西各地へ散らばった。コロナ禍で試合すらできない時期もあった。それでも誰一人抜けなかった。「試合あるで」の一言がLINEに届けば、みんなが動く。Instagramでの発信を続けた結果、草野球チームとしては異例のフォロワー1,000人超を達成。試合の熱量がそのまま数字に出た。</p>
+            <h3>GROWTH — 散っても、誰も抜けなかった。</h3>
+            <p>進学、就職、引っ越し。メンバーは関西各地へ散らばった。コロナ禍で試合すらできない時期もあった。それでも誰一人抜けなかった。「試合あるで」の一言がLINEに届けば、みんなが動く。Instagramでの発信を続けた結果、フォロワー1,000人超を達成。</p>
           </div>
         </div>
         <div class="timeline-connector">
           <div class="fire-line"></div>
         </div>
-        <div class="timeline-item">
+        <div class="timeline-item animate-in from-left">
           <div class="timeline-dot black-dot"></div>
           <div class="timeline-content">
             <p class="timeline-year">NOW</p>
             <h3>BLACK — 8年目の、始まり。</h3>
-            <p>ユニフォームを赤から黒に変えた。派手さより鋭さを選んだ。25歳になった今、チームとしての解像度が上がっている。勝ちたい。もっとうまくなりたい。スポンサーも、ブランドも、対外的な評価も——全部本気で狙いに行く。創設の炎は消えていない。黒の中で、静かに、確実に燃え続けている。</p>
+            <p>ユニフォームを赤から黒に変えた。派手さより鋭さを選んだ。25歳になった今、チームとしての解像度が上がっている。スポンサーも、ブランドも、対外的な評価も——全部本気で狙いに行く。創設の炎は消えていない。黒の中で、静かに、確実に燃え続けている。</p>
           </div>
         </div>
       </div>
@@ -155,25 +197,25 @@
   <!-- TEAM FEATURES -->
   <section class="features" id="team">
     <div class="container">
-      <p class="section-eyebrow center">WHY EIFER</p>
-      <h2 class="section-heading center">EIFERという存在</h2>
+      <p class="section-eyebrow center animate-in">WHY EIFER</p>
+      <h2 class="section-heading center animate-in">EIFERという存在</h2>
       <div class="features-grid">
-        <div class="feature-card">
+        <div class="feature-card animate-in">
           <div class="feature-num">01</div>
           <h3>負けた夜も、<br>続けてきた。</h3>
           <p>EIFERは無敵じゃない。負けた試合の数も、悔しかった夜の数も、正直に言える。それでも毎試合全力でぶつかる。強豪校経験者が引っ張り、初心者が必死に食らいつく——その温度差のなさが、このチームの核だ。</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card animate-in">
           <div class="feature-num">02</div>
           <h3>草野球で、<br>1,000人。</h3>
           <p>草野球チームのInstagramが1,000人を超えるのは、普通じゃない。飾った投稿じゃなく、グラウンドのリアルをそのまま出し続けた結果だ。見る人に「こいつらと試合したい」と思わせる何かが、EIFERにはある。</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card animate-in">
           <div class="feature-num">03</div>
           <h3>赤から黒へ、<br>8年目の決断。</h3>
           <p>創設から8年。赤いユニフォームで笑って、泣いて、戦い続けた。黒への転換は単なるイメージチェンジじゃない。「もっと本気でやる」という意思表明だ。チームとしての第二章が、今始まっている。</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card animate-in">
           <div class="feature-num">04</div>
           <h3>枚方に帰れば、<br>あいつがいる。</h3>
           <p>社会人になると、共通の話題も、一緒に過ごす時間も、自然と減っていく。EIFERのグラウンドは違う。ここに来れば、あの頃の感覚が戻ってくる。その「帰る場所」を持つ強さが、このチームを8年間動かし続けている。</p>
@@ -182,20 +224,32 @@
     </div>
   </section>
 
+  <!-- BASEBALL STITCH DIVIDER -->
+  <div class="stitch-divider">
+    <svg viewBox="0 0 1200 24" preserveAspectRatio="none">
+      <path d="M0 12 Q 100 2 200 12 Q 300 22 400 12 Q 500 2 600 12 Q 700 22 800 12 Q 900 2 1000 12 Q 1100 22 1200 12" stroke="#cc1800" stroke-width="1.5" fill="none" opacity="0.4"/>
+      <circle cx="100" cy="6" r="2" fill="#cc1800" opacity="0.5"/>
+      <circle cx="300" cy="18" r="2" fill="#cc1800" opacity="0.5"/>
+      <circle cx="500" cy="6" r="2" fill="#cc1800" opacity="0.5"/>
+      <circle cx="700" cy="18" r="2" fill="#cc1800" opacity="0.5"/>
+      <circle cx="900" cy="6" r="2" fill="#cc1800" opacity="0.5"/>
+      <circle cx="1100" cy="18" r="2" fill="#cc1800" opacity="0.5"/>
+    </svg>
+  </div>
+
   <!-- INSTAGRAM -->
   <section class="instagram" id="instagram">
     <div class="container">
-      <p class="section-eyebrow center">INSTAGRAM</p>
-      <h2 class="section-heading center">試合の熱量、リアルタイムで。</h2>
-      <p class="section-desc center">グラウンドの汗と興奮をそのまま発信中。<br>フォローして最新の試合情報をチェック。</p>
-      <div class="insta-grid">
-        <!-- インスタ写真 追加予定 -->
+      <p class="section-eyebrow center animate-in">INSTAGRAM</p>
+      <h2 class="section-heading center animate-in">試合の熱量、リアルタイムで。</h2>
+      <p class="section-desc center animate-in">グラウンドの汗と興奮をそのまま発信中。<br>フォローして最新の試合情報をチェック。</p>
+      <div class="insta-grid animate-in">
         <div class="insta-post photo-placeholder"><span>POST</span></div>
         <div class="insta-post photo-placeholder"><span>POST</span></div>
         <div class="insta-post photo-placeholder"><span>POST</span></div>
         <div class="insta-post photo-placeholder"><span>POST</span></div>
       </div>
-      <div class="insta-cta">
+      <div class="insta-cta animate-in">
         <a href="https://www.instagram.com/eifer2017hirakata" target="_blank" class="btn-fire">@eifer2017hirakata をフォロー</a>
       </div>
     </div>
@@ -204,10 +258,10 @@
   <!-- SPONSOR -->
   <section class="sponsor" id="sponsor">
     <div class="container">
-      <p class="section-eyebrow center">SPONSOR</p>
-      <h2 class="section-heading center">スポンサー募集</h2>
-      <p class="section-desc center">枚方から関西へ——EIFERの挑戦を<br>共に盛り上げてくださるスポンサー様を募集しています。</p>
-      <div class="sponsor-grid">
+      <p class="section-eyebrow center animate-in">SPONSOR</p>
+      <h2 class="section-heading center animate-in">スポンサー募集</h2>
+      <p class="section-desc center animate-in">枚方から関西へ——EIFERの挑戦を<br>共に盛り上げてくださるスポンサー様を募集しています。</p>
+      <div class="sponsor-grid animate-in">
         <div class="sponsor-slot">YOUR LOGO HERE</div>
         <div class="sponsor-slot">YOUR LOGO HERE</div>
         <div class="sponsor-slot">YOUR LOGO HERE</div>
@@ -218,25 +272,77 @@
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="contact-fire-bg"></div>
-    <div class="contact-inner">
+    <!-- Baseball seam decoration -->
+    <div class="ball-seam left-seam"></div>
+    <div class="ball-seam right-seam"></div>
+    <div class="contact-inner animate-in">
       <p class="section-eyebrow center">CONTACT</p>
       <h2 class="contact-heading">グラウンドで<br>会おう。</h2>
-      <p class="contact-desc">どのチームとでも戦う。強くても、弱くても、初対面でも関係ない。<br>「試合したい」と思ったその瞬間、DMを送ってほしい。<br>対戦申し込み・スポンサーのご相談、いつでもウェルカムだ。</p>
+      <p class="contact-desc">対戦申し込み・スポンサーのご相談は<br>InstagramのDMまでお気軽にどうぞ。<br>どのチームとでも、全力で戦います。</p>
       <a href="https://www.instagram.com/eifer2017hirakata" target="_blank" class="btn-fire btn-large">Instagram DMで連絡する</a>
     </div>
   </section>
 
   <footer>
     <div class="footer-inner">
-      <p class="footer-logo">EIFER</p>
+      <p class="footer-logo">EIFER ⚾</p>
       <p class="footer-copy">&copy;2026 EIFER All rights reserved. | Hirakata, Osaka</p>
     </div>
   </footer>
 
   <script>
+    // ── NAV SCROLL ──
     window.addEventListener('scroll', () => {
       document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
     });
+
+    // ── PARALLAX HERO ──
+    window.addEventListener('scroll', () => {
+      const hero = document.querySelector('.hero-inner');
+      if (hero) hero.style.transform = `translateY(${window.scrollY * 0.25}px)`;
+    });
+
+    // ── SCROLL REVEAL ──
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.animate-in').forEach(el => revealObserver.observe(el));
+
+    // ── NUMBER COUNTER ──
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target.querySelector('[data-target]');
+        if (!el || el.dataset.counted) return;
+        el.dataset.counted = true;
+        const target = parseInt(el.dataset.target);
+        const type = el.dataset.type;
+        if (type === 'year') return;
+        const plus = el.querySelector('.n-plus');
+        let start = 0;
+        const duration = 1400;
+        const step = target / (duration / 16);
+        const timer = setInterval(() => {
+          start = Math.min(start + step, target);
+          el.childNodes[0].textContent = Math.floor(start).toLocaleString();
+          if (start >= target) clearInterval(timer);
+        }, 16);
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.number-item').forEach(el => counterObserver.observe(el));
+
+    // ── GLITCH EFFECT (subtle, on load) ──
+    setTimeout(() => {
+      const title = document.querySelector('.glitch');
+      if (title) title.classList.add('glitch-active');
+    }, 800);
   </script>
 
 </body>
