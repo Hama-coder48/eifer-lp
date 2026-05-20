@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="EIFER（アイファー）｜大阪府枚方市を拠点に活動する草野球チーム。対戦申し込み・スポンサー募集中。">
+  <meta name="description" content="EIFER（アイファー）｜大阪府枚方市を拠点に活動する草野球チーム。2017年結成。対戦申し込み・スポンサー募集中。">
   <title>EIFER | 枚方発、本気の草野球</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,9 +18,9 @@
       <a href="#top" class="nav-logo">EIFER</a>
       <ul class="nav-links">
         <li><a href="#about">ABOUT</a></li>
-        <li><a href="#appeal">TEAM</a></li>
+        <li><a href="#history">HISTORY</a></li>
+        <li><a href="#team">TEAM</a></li>
         <li><a href="#instagram">INSTAGRAM</a></li>
-        <li><a href="#sponsor">SPONSOR</a></li>
         <li><a href="#contact" class="nav-cta">対戦申し込み</a></li>
       </ul>
     </div>
@@ -28,15 +28,24 @@
 
   <!-- HERO -->
   <section class="hero" id="top">
-    <div class="hero-bg"></div>
+    <div class="hero-bg">
+      <div class="flame-left"></div>
+      <div class="flame-right"></div>
+      <div class="ember e1"></div>
+      <div class="ember e2"></div>
+      <div class="ember e3"></div>
+      <div class="ember e4"></div>
+      <div class="ember e5"></div>
+    </div>
     <div class="hero-overlay"></div>
     <div class="hero-inner">
-      <p class="hero-label">HIRAKATA, OSAKA × BASEBALL</p>
+      <p class="hero-label">HIRAKATA, OSAKA × BASEBALL × SINCE 2017</p>
       <h1 class="hero-title">EIFER</h1>
-      <p class="hero-sub">アイファー</p>
-      <p class="hero-tagline">友達と積み重ねる、一球一球。</p>
+      <p class="hero-kana">ア イ フ ァ ー</p>
+      <div class="hero-line"></div>
+      <p class="hero-tagline">友達と積み重ねる、一球一球。<br><span>枚方から、本気で燃える。</span></p>
       <div class="hero-actions">
-        <a href="#contact" class="btn-primary">対戦申し込み</a>
+        <a href="#contact" class="btn-fire">対戦申し込み</a>
         <a href="#about" class="btn-ghost">チームを知る</a>
       </div>
     </div>
@@ -61,13 +70,15 @@
         </div>
         <div class="number-divider"></div>
         <div class="number-item">
-          <span class="number-val">1,000<span class="number-plus">+</span></span>
-          <span class="number-label">INSTAGRAM FOLLOWERS</span>
+          <span class="number-val">1,000<span class="n-plus">+</span></span>
+          <span class="number-label">FOLLOWERS</span>
         </div>
         <div class="number-divider"></div>
         <div class="number-item">
+          <span class="number-val red-val">赤</span>
+          <span class="arrow-val">→</span>
           <span class="number-val">黒</span>
-          <span class="number-label">NEW UNIFORM</span>
+          <span class="number-label">UNIFORM COLOR</span>
         </div>
       </div>
     </div>
@@ -78,24 +89,71 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-media">
-          <div class="photo-placeholder">
+          <!-- 写真1: インスタから追加予定 -->
+          <div class="photo-main photo-placeholder" id="photo1">
             <span>TEAM PHOTO</span>
             <p>写真追加予定</p>
+          </div>
+          <div class="photo-sub-grid">
+            <div class="photo-sub photo-placeholder" id="photo2"><span>GAME</span></div>
+            <div class="photo-sub photo-placeholder" id="photo3"><span>TEAM</span></div>
           </div>
         </div>
         <div class="about-content">
           <p class="section-eyebrow">ABOUT</p>
-          <h2 class="section-heading">枚方から、<br>本気で野球する。</h2>
-          <p class="about-lead">2017年、大阪府枚方市の幼馴染・同級生が「友達と野球する大切な時間を積み重ねていきたい」という想いで結成した草野球チーム。</p>
-          <p class="about-body">枚方と八幡のちょうど真ん中。今は関西各地で白球を追いかける全員2000年生まれの25歳が集まる。強豪校出身から初心者まで混在、勝ったり負けたりを繰り返しながら——一球一球を大切に、地に足をつけて戦い続けている。</p>
-          <a href="#contact" class="btn-primary">一緒に戦いませんか？</a>
+          <h2 class="section-heading">枚方から、<br>本気で燃える。</h2>
+          <p class="about-lead">2017年、大阪府枚方市の幼馴染・同級生が「友達と野球する大切な時間を積み重ねていきたい」という一心で集まった。</p>
+          <p class="about-body">枚方と八幡のちょうど真ん中。今は関西各地に散らばった全員2000年生まれの25歳が、それでもグラウンドに戻ってくる。強豪校出身もいれば、グローブを初めて握った奴もいる。それでいい。</p>
+          <p class="about-body">派手さはいらない。一球一球に魂を込めて、地に足をつけて戦う——それがEIFERだ。</p>
+          <a href="#contact" class="btn-fire">一緒に戦いませんか？</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY: RED → BLACK -->
+  <section class="history" id="history">
+    <div class="container">
+      <p class="section-eyebrow center">HISTORY</p>
+      <h2 class="section-heading center">赤から、黒へ。</h2>
+      <p class="history-sub center">創設の炎を胸に、より鋭く、より強く。</p>
+      <div class="history-timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot red-dot"></div>
+          <div class="timeline-content">
+            <p class="timeline-year">2017</p>
+            <h3>RED — 創設</h3>
+            <p>枚方市の幼馴染たちが集まり、EIFERが誕生。チームカラーは情熱の赤。「友達と野球する時間を大切に」という純粋な想いだけが原動力だった。</p>
+          </div>
+        </div>
+        <div class="timeline-connector">
+          <div class="fire-line"></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <p class="timeline-year">2020〜</p>
+            <h3>GROWTH — 成長</h3>
+            <p>メンバーが各地へ進学・就職で散らばっても、野球がみんなを繋ぎ続けた。Instagramでの発信を本格化し、フォロワーが1,000人を突破。</p>
+          </div>
+        </div>
+        <div class="timeline-connector">
+          <div class="fire-line"></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot black-dot"></div>
+          <div class="timeline-content">
+            <p class="timeline-year">NOW</p>
+            <h3>BLACK — 新章</h3>
+            <p>ユニフォームを赤から黒へ。創設の炎を内側に宿したまま、よりシャープに、よりプロフェッショナルに進化したEIFERが、さらなる高みへ向かう。</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- TEAM FEATURES -->
-  <section class="features" id="appeal">
+  <section class="features" id="team">
     <div class="container">
       <p class="section-eyebrow center">WHY EIFER</p>
       <h2 class="section-heading center">EIFERと戦う理由</h2>
@@ -103,22 +161,22 @@
         <div class="feature-card">
           <div class="feature-num">01</div>
           <h3>枚方発のガチチーム</h3>
-          <p>強豪校出身から初心者まで混在。ガチな試合から交流試合まで対応。対戦申し込み、いつでもウェルカム。</p>
+          <p>強豪校出身から初心者まで混在。それでもグラウンドに立てば全員本気。ガチな試合から交流試合まで、対戦申し込みいつでもウェルカム。</p>
         </div>
         <div class="feature-card">
           <div class="feature-num">02</div>
           <h3>インスタ1,000人超の実績</h3>
-          <p>草野球チームとしては異例のフォロワー数。試合の様子を積極的に発信し、チームのブランドを築いている。</p>
+          <p>草野球チームとしては異例のフォロワー数。試合の熱量を惜しみなく発信し続けた結果が、この数字に表れている。</p>
         </div>
         <div class="feature-card">
           <div class="feature-num">03</div>
-          <h3>黒ユニフォームで参上</h3>
-          <p>赤から黒へ。新体制で本格始動したEIFERが、さらなる高みを目指す。2026年、注目のチーム。</p>
+          <h3>赤の魂、黒の精鋭</h3>
+          <p>創設時の赤いユニフォームに宿った情熱はそのままに、黒のユニフォームへ刷新。8年間の歴史と進化を背負って戦う。</p>
         </div>
         <div class="feature-card">
           <div class="feature-num">04</div>
           <h3>枚方の絆、関西に広がる</h3>
-          <p>各地に散った幼馴染が、野球を通じて枚方に集まる。それがEIFERの原点であり、今も変わらない強さ。</p>
+          <p>各地に散った幼馴染が、野球を通じて枚方に帰ってくる。それがEIFERの原点であり、今も変わらない最大の強さ。</p>
         </div>
       </div>
     </div>
@@ -128,17 +186,17 @@
   <section class="instagram" id="instagram">
     <div class="container">
       <p class="section-eyebrow center">INSTAGRAM</p>
-      <h2 class="section-heading center">最新の活動をチェック</h2>
-      <p class="section-desc center">試合の様子、日常、チームの裏側まで発信中。</p>
-      <div class="insta-embed-area">
-        <!-- Instagram埋め込み（後で追加） -->
-        <div class="insta-placeholder">
-          <span class="insta-icon">📸</span>
-          <p>Instagram埋め込み 追加予定</p>
-        </div>
+      <h2 class="section-heading center">試合の熱量、リアルタイムで。</h2>
+      <p class="section-desc center">グラウンドの汗と興奮をそのまま発信中。<br>フォローして最新の試合情報をチェック。</p>
+      <div class="insta-grid">
+        <!-- インスタ写真 追加予定 -->
+        <div class="insta-post photo-placeholder"><span>POST</span></div>
+        <div class="insta-post photo-placeholder"><span>POST</span></div>
+        <div class="insta-post photo-placeholder"><span>POST</span></div>
+        <div class="insta-post photo-placeholder"><span>POST</span></div>
       </div>
       <div class="insta-cta">
-        <a href="https://www.instagram.com/eifer2017hirakata" target="_blank" class="btn-primary">@eifer2017hirakata をフォロー</a>
+        <a href="https://www.instagram.com/eifer2017hirakata" target="_blank" class="btn-fire">@eifer2017hirakata をフォロー</a>
       </div>
     </div>
   </section>
@@ -148,7 +206,7 @@
     <div class="container">
       <p class="section-eyebrow center">SPONSOR</p>
       <h2 class="section-heading center">スポンサー募集</h2>
-      <p class="section-desc center">EIFERの活動を共に盛り上げてくださる<br>スポンサー様を募集しています。<br>詳細はInstagram DMよりご相談ください。</p>
+      <p class="section-desc center">枚方から関西へ——EIFERの挑戦を<br>共に盛り上げてくださるスポンサー様を募集しています。</p>
       <div class="sponsor-grid">
         <div class="sponsor-slot">YOUR LOGO HERE</div>
         <div class="sponsor-slot">YOUR LOGO HERE</div>
@@ -159,26 +217,25 @@
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
+    <div class="contact-fire-bg"></div>
     <div class="contact-inner">
       <p class="section-eyebrow center">CONTACT</p>
-      <h2 class="contact-heading">対戦申し込み・<br>お問い合わせ</h2>
-      <p class="contact-desc">対戦申し込み、スポンサーのご相談は<br>InstagramのDMまでお気軽にどうぞ。</p>
-      <a href="https://www.instagram.com/eifer2017hirakata" target="_blank" class="btn-primary btn-large">Instagram DMで連絡する</a>
+      <h2 class="contact-heading">さあ、一緒に戦おう。</h2>
+      <p class="contact-desc">対戦申し込み・スポンサーのご相談は<br>InstagramのDMまでお気軽にどうぞ。<br>全力で受けて立ちます。</p>
+      <a href="https://www.instagram.com/eifer2017hirakata" target="_blank" class="btn-fire btn-large">Instagram DMで連絡する</a>
     </div>
   </section>
 
   <footer>
     <div class="footer-inner">
       <p class="footer-logo">EIFER</p>
-      <p class="footer-copy">&copy;2026 EIFER All rights reserved.</p>
+      <p class="footer-copy">&copy;2026 EIFER All rights reserved. | Hirakata, Osaka</p>
     </div>
   </footer>
 
   <script>
-    // Nav scroll effect
     window.addEventListener('scroll', () => {
-      const nav = document.getElementById('nav');
-      nav.classList.toggle('scrolled', window.scrollY > 50);
+      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
     });
   </script>
 
