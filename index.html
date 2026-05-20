@@ -12,6 +12,23 @@
 </head>
 <body>
 
+  <!-- ── PAGE LOADER ── -->
+  <div id="loader">
+    <canvas id="loader-canvas"></canvas>
+    <div class="loader-text">
+      <span class="loader-eifer">EIFER</span>
+      <span class="loader-sub">HIRAKATA, OSAKA — SINCE 2017</span>
+    </div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+
+  <!-- ── CUSTOM CURSOR ── -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ── GRAIN OVERLAY ── -->
+  <div id="grain"></div>
+
   <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
@@ -28,22 +45,14 @@
 
   <!-- HERO -->
   <section class="hero" id="top">
+    <canvas id="ember-canvas"></canvas>
     <div class="hero-bg">
       <div class="flame-left"></div>
       <div class="flame-right"></div>
-      <!-- Baseball diamond decoration -->
-      <div class="diamond-bg">
-        <div class="diamond-shape"></div>
-      </div>
-      <!-- Embers -->
-      <div class="ember e1"></div>
-      <div class="ember e2"></div>
-      <div class="ember e3"></div>
-      <div class="ember e4"></div>
-      <div class="ember e5"></div>
-      <div class="ember e6"></div>
+      <div class="diamond-bg"><div class="diamond-shape"></div></div>
     </div>
     <div class="hero-overlay"></div>
+    <div id="spotlight"></div>
     <div class="hero-inner">
       <p class="hero-label reveal-up">HIRAKATA, OSAKA &nbsp;⚾&nbsp; BASEBALL &nbsp;⚾&nbsp; SINCE 2017</p>
       <h1 class="hero-title glitch" data-text="EIFER">EIFER</h1>
@@ -51,8 +60,8 @@
       <div class="hero-line"></div>
       <p class="hero-tagline reveal-up">友達と積み重ねる、一球一球。<br><span>枚方から、本気で燃える。</span></p>
       <div class="hero-actions reveal-up">
-        <a href="#contact" class="btn-fire">対戦申し込み</a>
-        <a href="#about" class="btn-ghost">チームを知る</a>
+        <a href="#contact" class="btn-fire mag-btn">対戦申し込み</a>
+        <a href="#about" class="btn-ghost mag-btn">チームを知る</a>
       </div>
     </div>
     <div class="hero-scroll">
@@ -61,17 +70,22 @@
     </div>
   </section>
 
-  <!-- BASEBALL STITCH DIVIDER -->
-  <div class="stitch-divider">
-    <svg viewBox="0 0 1200 24" preserveAspectRatio="none">
-      <path d="M0 12 Q 100 2 200 12 Q 300 22 400 12 Q 500 2 600 12 Q 700 22 800 12 Q 900 2 1000 12 Q 1100 22 1200 12" stroke="#cc1800" stroke-width="1.5" fill="none" opacity="0.5"/>
-      <circle cx="100" cy="6" r="2" fill="#cc1800" opacity="0.6"/>
-      <circle cx="300" cy="18" r="2" fill="#cc1800" opacity="0.6"/>
-      <circle cx="500" cy="6" r="2" fill="#cc1800" opacity="0.6"/>
-      <circle cx="700" cy="18" r="2" fill="#cc1800" opacity="0.6"/>
-      <circle cx="900" cy="6" r="2" fill="#cc1800" opacity="0.6"/>
-      <circle cx="1100" cy="18" r="2" fill="#cc1800" opacity="0.6"/>
-    </svg>
+  <!-- MARQUEE 1 -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <span>BASEBALL</span><span class="marquee-dot">⚾</span>
+      <span>HIRAKATA</span><span class="marquee-dot">⚾</span>
+      <span>SINCE 2017</span><span class="marquee-dot">⚾</span>
+      <span>EIFER</span><span class="marquee-dot">⚾</span>
+      <span>大阪府枚方市</span><span class="marquee-dot">⚾</span>
+      <span>草野球</span><span class="marquee-dot">⚾</span>
+      <span>BASEBALL</span><span class="marquee-dot">⚾</span>
+      <span>HIRAKATA</span><span class="marquee-dot">⚾</span>
+      <span>SINCE 2017</span><span class="marquee-dot">⚾</span>
+      <span>EIFER</span><span class="marquee-dot">⚾</span>
+      <span>大阪府枚方市</span><span class="marquee-dot">⚾</span>
+      <span>草野球</span><span class="marquee-dot">⚾</span>
+    </div>
   </div>
 
   <!-- SCOREBOARD -->
@@ -104,7 +118,7 @@
     </div>
   </section>
 
-  <!-- BASEBALL STITCH DIVIDER -->
+  <!-- STITCH DIVIDER -->
   <div class="stitch-divider flip">
     <svg viewBox="0 0 1200 24" preserveAspectRatio="none">
       <path d="M0 12 Q 100 22 200 12 Q 300 2 400 12 Q 500 22 600 12 Q 700 2 800 12 Q 900 22 1000 12 Q 1100 2 1200 12" stroke="#cc1800" stroke-width="1.5" fill="none" opacity="0.5"/>
@@ -132,11 +146,10 @@
         </div>
         <div class="about-content animate-in from-right">
           <p class="section-eyebrow">ABOUT</p>
-          <h2 class="section-heading">それでも、<br>帰ってくる。</h2>
+          <h2 class="section-heading split-text">それでも、<br>帰ってくる。</h2>
           <p class="about-lead">住む場所が変わった。働く場所が変わった。連絡も昔ほど頻繁じゃない。それでも「試合あるで」の一言で、同じ顔が枚方に戻ってくる。</p>
           <p class="about-body">2017年、大阪府枚方市の幼馴染と同級生が立ち上げた草野球チーム。全員2000年生まれ。甲子園を目指したやつもいれば、グローブの締め方を知らなかったやつもいる。それでもユニフォームを着れば同じだ——勝ちたいという気持ちだけは、誰も妥協しない。</p>
           <p class="about-body">勝ったり負けたりを繰り返してきた。悔しい試合もあった。それでも続けてきたのは、野球が目的じゃないからだ。<strong>このメンバーと、この場所で、この瞬間を積み重ねること</strong>——それがEIFERの正体だ。</p>
-          <!-- Baseball diamond infield positions -->
           <div class="field-mini animate-in">
             <div class="field-diamond">
               <span class="base home">⚾</span>
@@ -146,7 +159,7 @@
             </div>
             <p class="field-label">EIFER FIELD</p>
           </div>
-          <a href="#contact" class="btn-fire">一緒に戦いませんか？</a>
+          <a href="#contact" class="btn-fire mag-btn">一緒に戦いませんか？</a>
         </div>
       </div>
     </div>
@@ -157,7 +170,7 @@
     <div class="history-bg-text">HISTORY</div>
     <div class="container">
       <p class="section-eyebrow center animate-in">HISTORY</p>
-      <h2 class="section-heading center animate-in">赤から、黒へ。</h2>
+      <h2 class="section-heading center split-text animate-in">赤から、黒へ。</h2>
       <p class="history-sub center animate-in">創設の炎を胸に、より鋭く、より強く。</p>
       <div class="history-timeline">
         <div class="timeline-item animate-in from-left">
@@ -168,9 +181,7 @@
             <p>「野球でまた集まれる場所を作りたい」——それだけだった。枚方と八幡の境目で、赤いユニフォームを着た17歳たちが集まった。強豪校出身者も、グローブの付け方を知らない奴も、同じチームとして初めてグラウンドに立った年。</p>
           </div>
         </div>
-        <div class="timeline-connector">
-          <div class="fire-line"></div>
-        </div>
+        <div class="timeline-connector"><div class="fire-line"></div></div>
         <div class="timeline-item animate-in from-right">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
@@ -179,9 +190,7 @@
             <p>進学、就職、引っ越し。メンバーは関西各地へ散らばった。コロナ禍で試合すらできない時期もあった。それでも誰一人抜けなかった。「試合あるで」の一言がLINEに届けば、みんなが動く。Instagramでの発信を続けた結果、フォロワー1,000人超を達成。</p>
           </div>
         </div>
-        <div class="timeline-connector">
-          <div class="fire-line"></div>
-        </div>
+        <div class="timeline-connector"><div class="fire-line"></div></div>
         <div class="timeline-item animate-in from-left">
           <div class="timeline-dot black-dot"></div>
           <div class="timeline-content">
@@ -194,28 +203,44 @@
     </div>
   </section>
 
+  <!-- MARQUEE 2 (reverse) -->
+  <div class="marquee-section marquee-reverse">
+    <div class="marquee-track">
+      <span>SINCE 2017</span><span class="marquee-dot">●</span>
+      <span>RED → BLACK</span><span class="marquee-dot">●</span>
+      <span>枚方×八幡</span><span class="marquee-dot">●</span>
+      <span>1,000 FOLLOWERS</span><span class="marquee-dot">●</span>
+      <span>本気の草野球</span><span class="marquee-dot">●</span>
+      <span>SINCE 2017</span><span class="marquee-dot">●</span>
+      <span>RED → BLACK</span><span class="marquee-dot">●</span>
+      <span>枚方×八幡</span><span class="marquee-dot">●</span>
+      <span>1,000 FOLLOWERS</span><span class="marquee-dot">●</span>
+      <span>本気の草野球</span><span class="marquee-dot">●</span>
+    </div>
+  </div>
+
   <!-- TEAM FEATURES -->
   <section class="features" id="team">
     <div class="container">
       <p class="section-eyebrow center animate-in">WHY EIFER</p>
-      <h2 class="section-heading center animate-in">EIFERという存在</h2>
+      <h2 class="section-heading center split-text animate-in">EIFERという存在</h2>
       <div class="features-grid">
-        <div class="feature-card animate-in">
+        <div class="feature-card animate-in tilt-card">
           <div class="feature-num">01</div>
           <h3>負けた夜も、<br>続けてきた。</h3>
           <p>EIFERは無敵じゃない。負けた試合の数も、悔しかった夜の数も、正直に言える。それでも毎試合全力でぶつかる。強豪校経験者が引っ張り、初心者が必死に食らいつく——その温度差のなさが、このチームの核だ。</p>
         </div>
-        <div class="feature-card animate-in">
+        <div class="feature-card animate-in tilt-card">
           <div class="feature-num">02</div>
           <h3>草野球で、<br>1,000人。</h3>
           <p>草野球チームのInstagramが1,000人を超えるのは、普通じゃない。飾った投稿じゃなく、グラウンドのリアルをそのまま出し続けた結果だ。見る人に「こいつらと試合したい」と思わせる何かが、EIFERにはある。</p>
         </div>
-        <div class="feature-card animate-in">
+        <div class="feature-card animate-in tilt-card">
           <div class="feature-num">03</div>
           <h3>赤から黒へ、<br>8年目の決断。</h3>
           <p>創設から8年。赤いユニフォームで笑って、泣いて、戦い続けた。黒への転換は単なるイメージチェンジじゃない。「もっと本気でやる」という意思表明だ。チームとしての第二章が、今始まっている。</p>
         </div>
-        <div class="feature-card animate-in">
+        <div class="feature-card animate-in tilt-card">
           <div class="feature-num">04</div>
           <h3>枚方に帰れば、<br>あいつがいる。</h3>
           <p>社会人になると、共通の話題も、一緒に過ごす時間も、自然と減っていく。EIFERのグラウンドは違う。ここに来れば、あの頃の感覚が戻ってくる。その「帰る場所」を持つ強さが、このチームを8年間動かし続けている。</p>
@@ -224,7 +249,7 @@
     </div>
   </section>
 
-  <!-- BASEBALL STITCH DIVIDER -->
+  <!-- STITCH DIVIDER -->
   <div class="stitch-divider">
     <svg viewBox="0 0 1200 24" preserveAspectRatio="none">
       <path d="M0 12 Q 100 2 200 12 Q 300 22 400 12 Q 500 2 600 12 Q 700 22 800 12 Q 900 2 1000 12 Q 1100 22 1200 12" stroke="#cc1800" stroke-width="1.5" fill="none" opacity="0.4"/>
@@ -241,7 +266,7 @@
   <section class="instagram" id="instagram">
     <div class="container">
       <p class="section-eyebrow center animate-in">INSTAGRAM</p>
-      <h2 class="section-heading center animate-in">試合の熱量、リアルタイムで。</h2>
+      <h2 class="section-heading center split-text animate-in">試合の熱量、リアルタイムで。</h2>
       <p class="section-desc center animate-in">グラウンドの汗と興奮をそのまま発信中。<br>フォローして最新の試合情報をチェック。</p>
       <div class="insta-grid animate-in">
         <div class="insta-post photo-placeholder"><span>POST</span></div>
@@ -250,7 +275,7 @@
         <div class="insta-post photo-placeholder"><span>POST</span></div>
       </div>
       <div class="insta-cta animate-in">
-        <a href="https://www.instagram.com/eifer2017hirakata" target="_blank" class="btn-fire">@eifer2017hirakata をフォロー</a>
+        <a href="https://www.instagram.com/eifer2017hirakata" target="_blank" class="btn-fire mag-btn">@eifer2017hirakata をフォロー</a>
       </div>
     </div>
   </section>
@@ -259,7 +284,7 @@
   <section class="sponsor" id="sponsor">
     <div class="container">
       <p class="section-eyebrow center animate-in">SPONSOR</p>
-      <h2 class="section-heading center animate-in">スポンサー募集</h2>
+      <h2 class="section-heading center split-text animate-in">スポンサー募集</h2>
       <p class="section-desc center animate-in">枚方から関西へ——EIFERの挑戦を<br>共に盛り上げてくださるスポンサー様を募集しています。</p>
       <div class="sponsor-grid animate-in">
         <div class="sponsor-slot">YOUR LOGO HERE</div>
@@ -272,14 +297,13 @@
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="contact-fire-bg"></div>
-    <!-- Baseball seam decoration -->
     <div class="ball-seam left-seam"></div>
     <div class="ball-seam right-seam"></div>
     <div class="contact-inner animate-in">
       <p class="section-eyebrow center">CONTACT</p>
-      <h2 class="contact-heading">グラウンドで<br>会おう。</h2>
+      <h2 class="contact-heading split-text">グラウンドで<br>会おう。</h2>
       <p class="contact-desc">対戦申し込み・スポンサーのご相談は<br>InstagramのDMまでお気軽にどうぞ。<br>どのチームとでも、全力で戦います。</p>
-      <a href="https://www.instagram.com/eifer2017hirakata" target="_blank" class="btn-fire btn-large">Instagram DMで連絡する</a>
+      <a href="https://www.instagram.com/eifer2017hirakata" target="_blank" class="btn-fire btn-large mag-btn">Instagram DMで連絡する</a>
     </div>
   </section>
 
@@ -291,59 +315,270 @@
   </footer>
 
   <script>
-    // ── NAV SCROLL ──
+  (() => {
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       1. PAGE LOADER
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    const loader   = document.getElementById('loader');
+    const loaderFill = document.querySelector('.loader-bar-fill');
+    const loaderEifer = document.querySelector('.loader-eifer');
+
+    // Canvas spark background in loader
+    const lc = document.getElementById('loader-canvas');
+    const lctx = lc.getContext('2d');
+    lc.width  = window.innerWidth;
+    lc.height = window.innerHeight;
+    const lSparks = Array.from({length:60}, () => ({
+      x: Math.random()*lc.width, y: lc.height + Math.random()*200,
+      vx: (Math.random()-0.5)*1.2, vy: -(1+Math.random()*2.5),
+      r: 1+Math.random()*2, o: 0.5+Math.random()*0.5, life:1
+    }));
+    let lFrame;
+    function animateLoader(){
+      lctx.clearRect(0,0,lc.width,lc.height);
+      lSparks.forEach(s => {
+        s.x+=s.vx; s.y+=s.vy; s.life-=0.008;
+        if(s.life<=0){s.x=Math.random()*lc.width;s.y=lc.height+10;s.life=1;}
+        lctx.beginPath();
+        lctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+        lctx.fillStyle=`rgba(255,${80+Math.random()*80},0,${s.o*s.life})`;
+        lctx.fill();
+      });
+      lFrame = requestAnimationFrame(animateLoader);
+    }
+    animateLoader();
+
+    // Progress bar animation
+    let prog = 0;
+    const progInt = setInterval(() => {
+      prog = Math.min(prog + Math.random()*18, 100);
+      loaderFill.style.width = prog + '%';
+      if(prog >= 100) clearInterval(progInt);
+    }, 60);
+
+    setTimeout(() => {
+      loaderEifer.style.opacity = '0';
+      loaderEifer.style.transform = 'scale(1.15) translateY(-10px)';
+    }, 900);
+
+    setTimeout(() => {
+      cancelAnimationFrame(lFrame);
+      loader.style.opacity = '0';
+      loader.style.pointerEvents = 'none';
+      setTimeout(() => { loader.remove(); }, 700);
+    }, 1400);
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       2. CUSTOM CURSOR
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    const dot  = document.getElementById('cursor');
+    const ring = document.getElementById('cursor-ring');
+    let mx=0, my=0, rx=0, ry=0;
+    document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
+    function animateCursor(){
+      dot.style.transform  = `translate(${mx-4}px,${my-4}px)`;
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.transform = `translate(${rx-18}px,${ry-18}px)`;
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Hover state on interactive elements
+    document.querySelectorAll('a,button,.tilt-card').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        dot.classList.add('cursor-hover');
+        ring.classList.add('cursor-hover');
+      });
+      el.addEventListener('mouseleave', () => {
+        dot.classList.remove('cursor-hover');
+        ring.classList.remove('cursor-hover');
+      });
+    });
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       3. SPOTLIGHT (hero only)
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    const spotlight = document.getElementById('spotlight');
+    const heroSection = document.querySelector('.hero');
+    document.addEventListener('mousemove', e => {
+      const rect = heroSection.getBoundingClientRect();
+      if(e.clientY >= rect.top && e.clientY <= rect.bottom){
+        spotlight.style.opacity = '1';
+        spotlight.style.left = e.clientX + 'px';
+        spotlight.style.top  = e.clientY + 'px';
+      } else {
+        spotlight.style.opacity = '0';
+      }
+    });
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       4. CANVAS EMBER PARTICLES (hero)
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    const ec = document.getElementById('ember-canvas');
+    const ectx = ec.getContext('2d');
+    function resizeEmber(){ ec.width=window.innerWidth; ec.height=window.innerHeight; }
+    resizeEmber();
+    window.addEventListener('resize', resizeEmber);
+
+    const particles = Array.from({length:80}, () => makeParticle());
+    function makeParticle(){ return {
+      x: Math.random()*ec.width, y: ec.height + Math.random()*100,
+      vx: (Math.random()-0.5)*0.8, vy: -(0.6+Math.random()*1.8),
+      r: 0.5+Math.random()*2.5, life:0.6+Math.random()*0.4,
+      hue: 10+Math.random()*30, bright:Math.random()>0.7
+    }; }
+    function drawEmbers(){
+      ectx.clearRect(0,0,ec.width,ec.height);
+      particles.forEach((p,i) => {
+        p.x+=p.vx; p.y+=p.vy; p.life-=0.003;
+        if(p.life<=0){ particles[i]=makeParticle(); return; }
+        const alpha = p.life;
+        const color = p.bright
+          ? `rgba(255,200,80,${alpha*0.9})`
+          : `rgba(255,${60+p.hue*3},0,${alpha*0.7})`;
+        ectx.beginPath();
+        ectx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ectx.fillStyle = color;
+        if(p.bright){ ectx.shadowColor='rgba(255,180,50,0.8)'; ectx.shadowBlur=6; }
+        ectx.fill();
+        ectx.shadowBlur=0;
+      });
+      requestAnimationFrame(drawEmbers);
+    }
+    drawEmbers();
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       5. NAV + PARALLAX
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     window.addEventListener('scroll', () => {
       document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+      const hi = document.querySelector('.hero-inner');
+      if(hi) hi.style.transform = `translateY(${window.scrollY * 0.22}px)`;
     });
 
-    // ── PARALLAX HERO ──
-    window.addEventListener('scroll', () => {
-      const hero = document.querySelector('.hero-inner');
-      if (hero) hero.style.transform = `translateY(${window.scrollY * 0.25}px)`;
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       6. SCROLL REVEAL
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    const revObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if(e.isIntersecting){ e.target.classList.add('visible'); revObs.unobserve(e.target); }
+      });
+    }, { threshold:0.1 });
+    document.querySelectorAll('.animate-in').forEach(el => revObs.observe(el));
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       7. TEXT SPLIT ANIMATION
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    document.querySelectorAll('.split-text').forEach(el => {
+      // Only split plain text nodes, preserve HTML structure
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+      const textNodes = [];
+      let node;
+      while((node=walker.nextNode())) textNodes.push(node);
+      textNodes.forEach(tn => {
+        const chars = tn.textContent.split('');
+        const frag = document.createDocumentFragment();
+        chars.forEach((ch, i) => {
+          if(ch === '\n'){ frag.appendChild(document.createTextNode('\n')); return; }
+          const s = document.createElement('span');
+          s.className = 'char';
+          s.style.setProperty('--ci', String(i));
+          s.textContent = ch;
+          frag.appendChild(s);
+        });
+        tn.parentNode.replaceChild(frag, tn);
+      });
     });
 
-    // ── SCROLL REVEAL ──
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
+    // Trigger char animation on reveal
+    const charObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          e.target.classList.add('chars-visible');
+          charObs.unobserve(e.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold:0.2 });
+    document.querySelectorAll('.split-text').forEach(el => charObs.observe(el));
 
-    document.querySelectorAll('.animate-in').forEach(el => revealObserver.observe(el));
 
-    // ── NUMBER COUNTER ──
-    const counterObserver = new IntersectionObserver((entries) => {
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       8. 3D CARD TILT
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    document.querySelectorAll('.tilt-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width  - 0.5;
+        const y = (e.clientY - r.top)  / r.height - 0.5;
+        card.style.transform = `perspective(600px) rotateY(${x*12}deg) rotateX(${-y*10}deg) scale(1.02)`;
+        card.style.transition = 'transform 0.05s linear';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+        card.style.transition = 'transform 0.5s cubic-bezier(0.23,1,0.32,1)';
+      });
+    });
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       9. MAGNETIC BUTTONS
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    document.querySelectorAll('.mag-btn').forEach(btn => {
+      btn.addEventListener('mousemove', e => {
+        const r = btn.getBoundingClientRect();
+        const x = e.clientX - r.left - r.width/2;
+        const y = e.clientY - r.top  - r.height/2;
+        btn.style.transform = `translate(${x*0.22}px,${y*0.22}px)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+        btn.style.transition = 'transform 0.5s cubic-bezier(0.23,1,0.32,1)';
+      });
+      btn.addEventListener('mouseenter', () => { btn.style.transition = 'none'; });
+    });
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       10. NUMBER COUNTER
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    const numObs = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
+        if(!entry.isIntersecting) return;
         const el = entry.target.querySelector('[data-target]');
-        if (!el || el.dataset.counted) return;
+        if(!el || el.dataset.counted) return;
         el.dataset.counted = true;
         const target = parseInt(el.dataset.target);
-        const type = el.dataset.type;
-        if (type === 'year') return;
+        if(el.dataset.type === 'year') return;
         const plus = el.querySelector('.n-plus');
         let start = 0;
-        const duration = 1400;
+        const duration = 1600;
         const step = target / (duration / 16);
-        const timer = setInterval(() => {
+        const t = setInterval(() => {
           start = Math.min(start + step, target);
           el.childNodes[0].textContent = Math.floor(start).toLocaleString();
-          if (start >= target) clearInterval(timer);
+          if(start >= target) clearInterval(t);
         }, 16);
       });
-    }, { threshold: 0.5 });
+    }, { threshold:0.5 });
+    document.querySelectorAll('.number-item').forEach(el => numObs.observe(el));
 
-    document.querySelectorAll('.number-item').forEach(el => counterObserver.observe(el));
 
-    // ── GLITCH EFFECT (subtle, on load) ──
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       11. GLITCH EFFECT
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     setTimeout(() => {
-      const title = document.querySelector('.glitch');
-      if (title) title.classList.add('glitch-active');
-    }, 800);
-  </script>
+      const t = document.querySelector('.glitch');
+      if(t) t.classList.add('glitch-active');
+    }, 1800);
 
+  })();
+  </script>
 </body>
 </html>
