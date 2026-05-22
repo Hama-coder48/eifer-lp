@@ -261,9 +261,54 @@ body {
   position:absolute; inset:0;
   background: radial-gradient(ellipse at 50% 100%, #320a00 0%, #180000 25%, #080808 60%, #030304 100%);
 }
+/* ── PBS 放射光線：中心から扇状に炎の光線が広がる ── */
+.hero-rays {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: conic-gradient(
+    from 0deg at 50% 44%,
+    transparent 0deg,   rgba(255,90,10,.055) 2deg,   transparent 6deg,
+    rgba(255,160,30,.04) 10deg,  transparent 15deg,
+    rgba(220,40,0,.06)  19deg,   transparent 24deg,
+    rgba(255,100,0,.05) 29deg,   transparent 35deg,
+    rgba(255,60,0,.065) 40deg,   transparent 46deg,
+    rgba(255,160,30,.04) 52deg,  transparent 58deg,
+    rgba(220,40,0,.055) 64deg,   transparent 71deg,
+    rgba(255,90,10,.05) 78deg,   transparent 85deg,
+    rgba(255,100,0,.06) 92deg,   transparent 100deg,
+    rgba(255,60,0,.05)  108deg,  transparent 116deg,
+    rgba(255,160,30,.045) 124deg, transparent 133deg,
+    rgba(220,40,0,.06)  142deg,  transparent 151deg,
+    rgba(255,90,10,.05) 160deg,  transparent 170deg,
+    rgba(255,100,0,.055) 180deg, transparent 191deg,
+    rgba(255,60,0,.05)  202deg,  transparent 214deg,
+    rgba(255,160,30,.04) 226deg, transparent 238deg,
+    rgba(220,40,0,.06)  250deg,  transparent 262deg,
+    rgba(255,90,10,.05) 274deg,  transparent 286deg,
+    rgba(255,100,0,.055) 298deg, transparent 310deg,
+    rgba(255,60,0,.06)  322deg,  transparent 334deg,
+    rgba(255,160,30,.045) 346deg, transparent 354deg,
+    rgba(255,90,10,.05) 358deg,  transparent 360deg
+  );
+}
+
+/* ── PBS 中央バースト：タイトル周辺の光爆発 ── */
+.hero-burst {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    radial-gradient(ellipse 58% 48% at 50% 44%,
+      rgba(255,240,120,.14) 0%,
+      rgba(255,150,20,.11)  10%,
+      rgba(220,50,0,.08)    26%,
+      rgba(160,10,0,.04)    46%,
+      transparent           66%),
+    radial-gradient(circle 200px at 50% 44%,
+      rgba(255,255,200,.08) 0%,
+      transparent           100%);
+}
+
 .hero-overlay {
   position:absolute; inset:0;
-  background: linear-gradient(to bottom, rgba(6,6,8,0.25) 0%, transparent 30%, rgba(6,6,8,0.6) 100%);
+  background: linear-gradient(to bottom, rgba(6,6,8,0.15) 0%, transparent 30%, rgba(6,6,8,0.55) 100%);
 }
 .flame-left {
   position:absolute; bottom:0; left:0; width:45%; height:75%;
@@ -307,56 +352,51 @@ body {
   overflow: hidden;
 }
 
-/* ── 選手共通：メタリックフィルター ──
-   高コントラスト + 彩度抑制 + ブロンズ色調 = 鉄・金属感
-   drop-shadow で EIFER の炎グロウを反射
+/* ── 選手共通：PBS鮮やか処理 ──
+   高コントラスト + 高彩度 + 炎グロウ = ゲームパッケージ的な発光感
 */
 .hp {
   position: absolute;
   bottom: 0;
   background-size: cover;
-  background-position: center 18%; /* 頭から足まで全身が映るよう少し下め */
+  background-position: center 18%;
   background-repeat: no-repeat;
   display: none;
 
   filter:
-    contrast(1.85)
-    saturate(0.55)
-    brightness(1.05)
-    sepia(0.28)
-    drop-shadow(0 0 18px rgba(255,160,30,.55))
-    drop-shadow(0 0 40px rgba(200,30,0,.45))
+    contrast(1.62)
+    saturate(1.58)
+    brightness(1.04)
+    drop-shadow(0 0 16px rgba(255,120,20,.62))
+    drop-shadow(0 0 38px rgba(200,30,0,.50))
     drop-shadow(0 8px 22px rgba(0,0,0,.99));
 
   transition: opacity .6s ease;
 }
 
-/* ── 4方向ビネット：写真の明るい背景を暗闇に溶け込ませる ── */
+/* ── 4方向ビネット：写真背景を暗闇に溶け込ませる ── */
 .hp::after {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to top,    #060608 0%,              transparent 40%),
-    linear-gradient(to bottom, rgba(6,6,8,.92) 0%,      transparent 22%),
-    linear-gradient(to right,  rgba(6,6,8,.80) 0%,      transparent 35%),
-    linear-gradient(to left,   rgba(6,6,8,.80) 0%,      transparent 35%);
+    linear-gradient(to top,    #060608 0%,            transparent 42%),
+    linear-gradient(to bottom, rgba(6,6,8,.88) 0%,    transparent 20%),
+    linear-gradient(to right,  rgba(6,6,8,.75) 0%,    transparent 32%),
+    linear-gradient(to left,   rgba(6,6,8,.75) 0%,    transparent 32%);
   pointer-events: none;
 }
 
-/* ── メタリックシーン：斜め光沢ライン ── */
+/* ── 炎色ライトリム：選手の輪郭に炎の光が当たる演出 ── */
 .hp::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255,220,140,.10) 0%,
-    rgba(255,255,255,.04) 30%,
-    rgba(0,0,0,0)         50%,
-    rgba(255,180,60,.07)  72%,
-    rgba(255,255,255,.02) 100%
-  );
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 40%,
+      rgba(255,200,80,.08) 0%,
+      rgba(255,80,0,.05)   35%,
+      transparent          65%);
   mix-blend-mode: screen;
   pointer-events: none;
 }
@@ -421,13 +461,12 @@ body {
   z-index: 5;
   clip-path: polygon(3% 0%, 97% 0%, 100% 100%, 0% 100%);
   filter:
-    contrast(2.0)
-    saturate(0.62)
-    brightness(1.18)
-    sepia(0.22)
-    drop-shadow(0 0 50px rgba(255,170,40,.80))
-    drop-shadow(0 0 100px rgba(220,40,0,.60))
-    drop-shadow(0 0 180px rgba(255,80,0,.25))
+    contrast(1.80)
+    saturate(1.72)
+    brightness(1.14)
+    drop-shadow(0 0 45px rgba(255,150,30,.88))
+    drop-shadow(0 0 90px rgba(220,40,0,.68))
+    drop-shadow(0 0 160px rgba(255,80,0,.32))
     drop-shadow(0 10px 32px rgba(0,0,0,.99));
 }
 
