@@ -54,15 +54,21 @@
     <div class="hero-overlay"></div>
     <div id="spotlight"></div>
 
-    <!-- ── PBS PLAYER COMPOSITE ── -->
+    <!-- ── PBS PLAYER COMPOSITE 10人フルメンバー ── -->
     <div class="hero-players" id="hero-players">
+      <!-- 左サイド：外側(背景) → 内側(前面) の DOM 順 -->
       <div class="hp hp-l1" id="hp1"></div>
       <div class="hp hp-l2" id="hp2"></div>
       <div class="hp hp-l3" id="hp3"></div>
-      <div class="hp hp-c"  id="hp4"></div>
-      <div class="hp hp-r1" id="hp5"></div>
-      <div class="hp hp-r2" id="hp6"></div>
-      <div class="hp hp-r3" id="hp7"></div>
+      <div class="hp hp-l4" id="hp4"></div>
+      <div class="hp hp-l5" id="hp5"></div>
+      <!-- 右サイド：外側(背景) → 内側(前面) の DOM 順 -->
+      <div class="hp hp-r4" id="hp10"></div>
+      <div class="hp hp-r3" id="hp9"></div>
+      <div class="hp hp-r2" id="hp8"></div>
+      <div class="hp hp-r1" id="hp7"></div>
+      <!-- 中央メイン：常に最前面 (z-index:5) -->
+      <div class="hp hp-c"  id="hp6"></div>
     </div>
 
     <div class="hero-inner">
@@ -583,20 +589,22 @@
 
 
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       11. PBS PLAYER COMPOSITE — 画像ローダー
-       images/players/player1.jpg 〜 player7.jpg を
-       自動読み込み。ファイルが無ければ非表示のまま。
-       配置: L1(外左)→L2→L3→C(中央メイン)→R1→R2→R3(外右)
+       11. PBS PLAYER COMPOSITE — 画像ローダー（10人）
+       images/players/player1〜10.jpg を自動読み込み。
+       配置: L1→L2→L3→L4→L5 ╱[C★]╲ R1→R2→R3→R4
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     (() => {
       const slots = [
-        { id:'hp1', file:'player1.jpg' },
-        { id:'hp2', file:'player2.jpg' },
-        { id:'hp3', file:'player3.jpg' },
-        { id:'hp4', file:'player4.jpg' },
-        { id:'hp5', file:'player5.jpg' },
-        { id:'hp6', file:'player6.jpg' },
-        { id:'hp7', file:'player7.jpg' },
+        { id:'hp1',  file:'player1.jpg'  },  // L1: 投球（外左）
+        { id:'hp2',  file:'player2.jpg'  },  // L2: 守備
+        { id:'hp3',  file:'player3.jpg'  },  // L3: 打撃構え
+        { id:'hp4',  file:'player8.jpg'  },  // L4: 2人睨み
+        { id:'hp5',  file:'player9.jpg'  },  // L5: 笑顔バッター（内左）
+        { id:'hp6',  file:'player4.jpg'  },  // C★: ガッツポーズ（中央）
+        { id:'hp7',  file:'player5.jpg'  },  // R1: メガネスイング（内右）
+        { id:'hp8',  file:'player6.jpg'  },  // R2: 全力疾走
+        { id:'hp9',  file:'player7.jpg'  },  // R3: シャカポーズ
+        { id:'hp10', file:'player10.jpg' },  // R4: 22番後ろ姿（外右）
       ];
       slots.forEach(({ id, file }) => {
         const el = document.getElementById(id);

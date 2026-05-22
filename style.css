@@ -294,10 +294,10 @@ body {
 
 
 /* ═══════════════════════════════════════════════════════
-   PBS PLAYER COMPOSITE — 7人構成
-   プロ野球スピリッツ風 — 選手が EIFER タイトルを囲む
-   player1.jpg（左端）〜 player7.jpg（右端）
-   player4.jpg が中央メイン・最前面
+   PBS PLAYER COMPOSITE — 10人フルメンバー構成
+   プロ野球スピリッツ風 — 5左 + 中央★ + 4右 = 10人
+   L1→L2→L3→L4→L5 ╱[EIFER]╲ R1→R2→R3→R4
+   hp-c（player4）が中央メイン・最前面
 ═══════════════════════════════════════════════════════ */
 
 .hero-players {
@@ -315,9 +315,8 @@ body {
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  display: none; /* 写真が読み込まれたら JS が block に変える */
+  display: none; /* JS が写真ロード後に block へ変える */
 
-  /* PBS フィルター：コントラスト強め・彩度アップ・赤いグロウ */
   filter:
     contrast(1.32)
     saturate(1.42)
@@ -338,7 +337,7 @@ body {
   pointer-events: none;
 }
 
-/* 赤トーン統一オーバーレイ */
+/* 赤トーンオーバーレイ */
 .hp::before {
   content: '';
   position: absolute;
@@ -347,50 +346,67 @@ body {
   pointer-events: none;
 }
 
-/* ━━━ 7人配置 左から順に ━━━
-   l1 → l2 → l3 →  [EIFER]  → r1 → r2 → r3
-                       ↑c（最前面）
-*/
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   左サイド：L1（外側・最小）→ L5（内側・最大）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-/* ── P1：左端外側 ── */
 .hp-l1 {
   left: 0;
-  width: clamp(70px, 14%, 180px);
-  height: 62vh;
-  clip-path: polygon(14% 0%, 100% 0%, 72% 100%, 0% 100%);
-  transform: rotate(-8deg);
+  width: clamp(55px, 9%, 120px);
+  height: 50vh;
+  clip-path: polygon(18% 0%, 100% 0%, 66% 100%, 0% 100%);
+  transform: rotate(-11deg);
   transform-origin: bottom left;
   z-index: 2;
 }
 
-/* ── P2：左内側 ── */
 .hp-l2 {
-  left: clamp(50px, 11%, 150px);
-  width: clamp(85px, 16%, 205px);
-  height: 72vh;
-  clip-path: polygon(8% 0%, 100% 0%, 76% 100%, 0% 100%);
+  left: clamp(40px, 8%, 100px);
+  width: clamp(70px, 11%, 145px);
+  height: 60vh;
+  clip-path: polygon(11% 0%, 100% 0%, 72% 100%, 0% 100%);
+  transform: rotate(-7deg);
+  transform-origin: bottom center;
+  z-index: 2;
+}
+
+.hp-l3 {
+  left: clamp(95px, 17%, 215px);
+  width: clamp(85px, 13%, 170px);
+  height: 69vh;
+  clip-path: polygon(7% 0%, 100% 0%, 76% 100%, 0% 100%);
   transform: rotate(-4deg);
   transform-origin: bottom center;
   z-index: 2;
 }
 
-/* ── P3：左センター寄り ── */
-.hp-l3 {
-  left: clamp(110px, 22%, 285px);
-  width: clamp(100px, 18%, 230px);
-  height: 82vh;
-  clip-path: polygon(5% 0%, 100% 0%, 80% 100%, 0% 100%);
+.hp-l4 {
+  left: clamp(160px, 26%, 335px);
+  width: clamp(95px, 14%, 185px);
+  height: 78vh;
+  clip-path: polygon(4% 0%, 100% 0%, 80% 100%, 0% 100%);
   transform: rotate(-1.5deg);
   transform-origin: bottom center;
   z-index: 2;
 }
 
-/* ── P4：中央メイン（PBS 最前面・最大・最明るい） ── */
+.hp-l5 {
+  left: clamp(230px, 36%, 460px);
+  width: clamp(100px, 15%, 195px);
+  height: 87vh;
+  clip-path: polygon(2% 0%, 100% 0%, 83% 100%, 0% 100%);
+  z-index: 2;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   中央メイン：最前面・最大・最明るい
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
 .hp-c {
   left: 50%;
   transform: translateX(-50%);
-  width: clamp(115px, 21%, 270px);
-  height: 92vh;
+  width: clamp(108px, 17%, 225px);
+  height: 94vh;
   z-index: 5;
   clip-path: polygon(3% 0%, 97% 0%, 100% 100%, 0% 100%);
   filter:
@@ -402,57 +418,84 @@ body {
     drop-shadow(0 10px 40px rgba(0,0,0,.99));
 }
 
-/* ── P5：右センター寄り ── */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   右サイド：R1（内側・最大）→ R4（外側・最小）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
 .hp-r1 {
-  right: clamp(110px, 22%, 285px);
-  width: clamp(100px, 18%, 230px);
-  height: 82vh;
-  clip-path: polygon(0% 0%, 95% 0%, 100% 100%, 20% 100%);
+  right: clamp(230px, 36%, 460px);
+  width: clamp(100px, 15%, 195px);
+  height: 87vh;
+  clip-path: polygon(0% 0%, 98% 0%, 100% 100%, 17% 100%);
+  z-index: 2;
+}
+
+.hp-r2 {
+  right: clamp(160px, 26%, 335px);
+  width: clamp(95px, 14%, 185px);
+  height: 78vh;
+  clip-path: polygon(0% 0%, 96% 0%, 100% 100%, 20% 100%);
   transform: rotate(1.5deg);
   transform-origin: bottom center;
   z-index: 2;
 }
 
-/* ── P6：右内側 ── */
-.hp-r2 {
-  right: clamp(50px, 11%, 150px);
-  width: clamp(85px, 16%, 205px);
-  height: 72vh;
-  clip-path: polygon(0% 0%, 92% 0%, 100% 100%, 24% 100%);
+.hp-r3 {
+  right: clamp(95px, 17%, 215px);
+  width: clamp(85px, 13%, 170px);
+  height: 69vh;
+  clip-path: polygon(0% 0%, 93% 0%, 100% 100%, 24% 100%);
   transform: rotate(4deg);
   transform-origin: bottom center;
   z-index: 2;
 }
 
-/* ── P7：右端外側 ── */
-.hp-r3 {
+.hp-r4 {
   right: 0;
-  width: clamp(70px, 14%, 180px);
-  height: 62vh;
-  clip-path: polygon(0% 0%, 86% 0%, 100% 100%, 28% 100%);
-  transform: rotate(8deg);
+  width: clamp(55px, 9%, 120px);
+  height: 50vh;
+  clip-path: polygon(0% 0%, 82% 0%, 100% 100%, 34% 100%);
+  transform: rotate(11deg);
   transform-origin: bottom right;
   z-index: 2;
 }
 
-/* ── レスポンシブ: 1200px以下（5人：外側2枚を非表示） ── */
-@media (max-width: 1200px) {
-  .hp-l1, .hp-r3 { display: none !important; }
+/* ━━━ レスポンシブ ━━━ */
+
+/* 1400px以下：8人（L1・R4 を非表示） */
+@media (max-width: 1400px) {
+  .hp-l1, .hp-r4 { display: none !important; }
   .hp-l2 { left: 0; }
+  .hp-r3 { right: 0; }
+}
+
+/* 1100px以下：6人（L1・L2・R3・R4 を非表示） */
+@media (max-width: 1100px) {
+  .hp-l1, .hp-l2, .hp-r3, .hp-r4 { display: none !important; }
+  .hp-l3 { left: 0; }
   .hp-r2 { right: 0; }
 }
 
-/* ── レスポンシブ: タブレット 900px以下（3人） ── */
-@media (max-width: 900px) {
-  .hp-l1, .hp-l2, .hp-r2, .hp-r3 { display: none !important; }
-  .hp-l3 { left: 0; width: clamp(90px, 28%, 210px); }
-  .hp-r1 { right: 0; width: clamp(90px, 28%, 210px); }
-  .hp-c  { width: clamp(110px, 34%, 250px); }
+/* タブレット 800px以下：4人（L4・L5・C・R1 のみ） */
+@media (max-width: 800px) {
+  .hp-l1,.hp-l2,.hp-l3,.hp-r2,.hp-r3,.hp-r4 { display: none !important; }
+  .hp-l4 { left: 0; width: clamp(70px, 22%, 170px); }
+  .hp-l5 { left: clamp(60px, 19%, 150px); width: clamp(85px, 24%, 190px); }
+  .hp-r1 { right: clamp(60px, 19%, 150px); width: clamp(85px, 24%, 190px); }
 }
 
-/* ── レスポンシブ: スマホ 540px以下（1人） ── */
-@media (max-width: 540px) {
-  .hp-l1,.hp-l2,.hp-l3,.hp-r1,.hp-r2,.hp-r3 { display: none !important; }
+/* スマホ 580px以下：3人（L5・C・R1 のみ） */
+@media (max-width: 580px) {
+  .hp-l1,.hp-l2,.hp-l3,.hp-l4,.hp-r2,.hp-r3,.hp-r4 { display: none !important; }
+  .hp-l5 { left: 0; width: clamp(78px, 30%, 195px); height: 74vh; }
+  .hp-r1 { right: 0; width: clamp(78px, 30%, 195px); height: 74vh; }
+  .hp-c  { width: clamp(98px, 36%, 245px); }
+}
+
+/* スマホ小 420px以下：中央1人のみ */
+@media (max-width: 420px) {
+  .hp-l1,.hp-l2,.hp-l3,.hp-l4,.hp-l5,
+  .hp-r1,.hp-r2,.hp-r3,.hp-r4 { display: none !important; }
   .hp-c { width: 62%; height: 76vh; }
 }
 .hero-label {
