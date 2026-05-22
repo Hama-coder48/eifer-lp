@@ -614,7 +614,11 @@
         if (!el) return;
         const img = new Image();
         img.onload = () => {
-          el.style.backgroundImage = `url('images/players/${file}')`;
+          // <img>タグとして挿入 → PNG全体像が確実に表示される（クロップなし）
+          const imgEl = document.createElement('img');
+          imgEl.src = `images/players/${file}`;
+          imgEl.alt = '';
+          el.appendChild(imgEl);
           el.style.display = 'block';
           // フェードイン
           el.style.opacity = '0';
