@@ -40,8 +40,20 @@
         <li><a href="#instagram">INSTAGRAM</a></li>
         <li><a href="#contact" class="nav-cta">対戦申し込み</a></li>
       </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="nav-mobile-menu" id="nav-mobile-menu" aria-hidden="true">
+    <a href="#about">ABOUT</a>
+    <a href="#history">HISTORY</a>
+    <a href="#team">TEAM</a>
+    <a href="#instagram">INSTAGRAM</a>
+    <a href="#contact" class="nav-mobile-cta">対戦申し込み</a>
+  </div>
 
   <!-- HERO -->
   <section class="hero" id="top">
@@ -423,6 +435,34 @@
         ring.classList.remove('cursor-hover');
       });
     });
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       2b. HAMBURGER NAV TOGGLE
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    const navToggle     = document.getElementById('nav-toggle');
+    const navMobileMenu = document.getElementById('nav-mobile-menu');
+    if(navToggle && navMobileMenu){
+      const openMenu = () => {
+        navToggle.classList.add('open');
+        navToggle.setAttribute('aria-expanded','true');
+        navMobileMenu.classList.add('open');
+        navMobileMenu.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+      };
+      const closeMenu = () => {
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded','false');
+        navMobileMenu.classList.remove('open');
+        navMobileMenu.setAttribute('aria-hidden','true');
+        document.body.style.overflow = '';
+      };
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.contains('open') ? closeMenu() : openMenu();
+      });
+      navMobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', e => { if(e.key==='Escape') closeMenu(); });
+    }
 
 
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
