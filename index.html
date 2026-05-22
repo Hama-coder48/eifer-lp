@@ -53,6 +53,16 @@
     </div>
     <div class="hero-overlay"></div>
     <div id="spotlight"></div>
+
+    <!-- ── PBS PLAYER COMPOSITE ── -->
+    <div class="hero-players" id="hero-players">
+      <div class="hp hp-l1" id="hp1"></div>
+      <div class="hp hp-l2" id="hp2"></div>
+      <div class="hp hp-c"  id="hp3"></div>
+      <div class="hp hp-r1" id="hp4"></div>
+      <div class="hp hp-r2" id="hp5"></div>
+    </div>
+
     <div class="hero-inner">
       <p class="hero-label reveal-up">HIRAKATA, OSAKA &nbsp;⚾&nbsp; BASEBALL &nbsp;⚾&nbsp; SINCE 2017</p>
       <h1 class="hero-title glitch" data-text="EIFER">EIFER</h1>
@@ -571,12 +581,45 @@
 
 
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       11. GLITCH EFFECT
+       11. PBS PLAYER COMPOSITE — 画像ローダー
+       images/players/player1.jpg 〜 player5.jpg を
+       自動読み込み。ファイルが無ければ非表示のまま。
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    (() => {
+      const slots = [
+        { id:'hp1', file:'player1.jpg' },
+        { id:'hp2', file:'player2.jpg' },
+        { id:'hp3', file:'player3.jpg' },
+        { id:'hp4', file:'player4.jpg' },
+        { id:'hp5', file:'player5.jpg' },
+      ];
+      slots.forEach(({ id, file }) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const img = new Image();
+        img.onload = () => {
+          el.style.backgroundImage = `url('images/players/${file}')`;
+          el.style.display = 'block';
+          // フェードイン
+          el.style.opacity = '0';
+          requestAnimationFrame(() => {
+            el.style.transition = 'opacity .6s ease';
+            el.style.opacity = '1';
+          });
+        };
+        img.src = `images/players/${file}`;
+      });
+    })();
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       12. GLITCH EFFECT
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     setTimeout(() => {
       const t = document.querySelector('.glitch');
       if(t) t.classList.add('glitch-active');
     }, 1800);
+
 
   })();
   </script>
