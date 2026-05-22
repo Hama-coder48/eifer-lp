@@ -358,8 +358,8 @@ body {
 .hp {
   position: absolute;
   bottom: 0;
-  background-size: cover;
-  background-position: center 18%;
+  background-size: contain;
+  background-position: center bottom;
   background-repeat: no-repeat;
   display: none;
 
@@ -374,16 +374,13 @@ body {
   transition: opacity .6s ease;
 }
 
-/* ── 4方向ビネット：写真背景を暗闇に溶け込ませる ── */
+/* ── 底部フェード：選手の足元を暗闇に溶け込ませる（透明PNG対応）── */
 .hp::after {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to top,    #060608 0%,            transparent 42%),
-    linear-gradient(to bottom, rgba(6,6,8,.88) 0%,    transparent 20%),
-    linear-gradient(to right,  rgba(6,6,8,.75) 0%,    transparent 32%),
-    linear-gradient(to left,   rgba(6,6,8,.75) 0%,    transparent 32%);
+    linear-gradient(to top, #060608 0%, rgba(6,6,8,.5) 18%, transparent 45%);
   pointer-events: none;
 }
 
@@ -407,9 +404,6 @@ body {
   left: 0;
   width: clamp(68px, 11%, 148px);
   height: 42vh;
-  clip-path: polygon(18% 0%, 100% 0%, 66% 100%, 0% 100%);
-  transform: rotate(-10deg);
-  transform-origin: bottom left;
   z-index: 2;
 }
 
@@ -417,9 +411,6 @@ body {
   left: clamp(52px, 10%, 132px);
   width: clamp(80px, 13%, 172px);
   height: 50vh;
-  clip-path: polygon(11% 0%, 100% 0%, 72% 100%, 0% 100%);
-  transform: rotate(-6deg);
-  transform-origin: bottom center;
   z-index: 2;
 }
 
@@ -427,9 +418,6 @@ body {
   left: clamp(112px, 19%, 244px);
   width: clamp(90px, 15%, 192px);
   height: 58vh;
-  clip-path: polygon(7% 0%, 100% 0%, 76% 100%, 0% 100%);
-  transform: rotate(-3deg);
-  transform-origin: bottom center;
   z-index: 2;
 }
 
@@ -437,9 +425,6 @@ body {
   left: clamp(180px, 28%, 360px);
   width: clamp(100px, 16%, 208px);
   height: 65vh;
-  clip-path: polygon(4% 0%, 100% 0%, 80% 100%, 0% 100%);
-  transform: rotate(-1deg);
-  transform-origin: bottom center;
   z-index: 2;
 }
 
@@ -447,7 +432,6 @@ body {
   left: clamp(252px, 38%, 488px);
   width: clamp(106px, 17%, 220px);
   height: 72vh;
-  clip-path: polygon(2% 0%, 100% 0%, 83% 100%, 0% 100%);
   z-index: 2;
 }
 
@@ -459,7 +443,6 @@ body {
   width: clamp(112px, 19%, 248px);
   height: 78vh;
   z-index: 5;
-  clip-path: polygon(3% 0%, 97% 0%, 100% 100%, 0% 100%);
   filter:
     contrast(1.80)
     saturate(1.72)
@@ -476,7 +459,6 @@ body {
   right: clamp(252px, 38%, 488px);
   width: clamp(106px, 17%, 220px);
   height: 72vh;
-  clip-path: polygon(0% 0%, 98% 0%, 100% 100%, 17% 100%);
   z-index: 2;
 }
 
@@ -484,9 +466,6 @@ body {
   right: clamp(180px, 28%, 360px);
   width: clamp(100px, 16%, 208px);
   height: 65vh;
-  clip-path: polygon(0% 0%, 96% 0%, 100% 100%, 20% 100%);
-  transform: rotate(1deg);
-  transform-origin: bottom center;
   z-index: 2;
 }
 
@@ -494,9 +473,6 @@ body {
   right: clamp(112px, 19%, 244px);
   width: clamp(90px, 15%, 192px);
   height: 58vh;
-  clip-path: polygon(0% 0%, 93% 0%, 100% 100%, 24% 100%);
-  transform: rotate(3deg);
-  transform-origin: bottom center;
   z-index: 2;
 }
 
@@ -504,9 +480,6 @@ body {
   right: 0;
   width: clamp(68px, 11%, 148px);
   height: 42vh;
-  clip-path: polygon(0% 0%, 82% 0%, 100% 100%, 34% 100%);
-  transform: rotate(10deg);
-  transform-origin: bottom right;
   z-index: 2;
 }
 
