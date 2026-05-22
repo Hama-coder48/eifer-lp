@@ -359,6 +359,7 @@ body {
   position: absolute;
   bottom: 0;
   display: none;
+  overflow: visible;
   transition: opacity .6s ease;
 }
 
@@ -402,26 +403,23 @@ body {
   pointer-events: none;
 }
 
-/* ━━━ 弧状配置：EIFERを囲む / 外側ほど高く浮かせてアーチ感 ━━━
-
-   底面(bottom)オフセット：中央が低く（地面）、外に行くほど高く浮かせる
-   → EIFERの文字を半円状に選手が囲むプロスピパッケージ感
-
+/* ━━━ 扇形ファン配置：全員 bottom:0 で地面に立つ ━━━
+   中央デカく、外に行くほど小さく。プロスピパッケージ感。
 */
 
-/* 左サイド：外(L1)ほど bottom 高め → 上方向へアーク */
-.hp-l1 { left: 0;   bottom: 24vh; height: 44vh; z-index: 2; }
-.hp-l2 { left: 2%;  bottom: 15vh; height: 54vh; z-index: 3; }
-.hp-l3 { left: 7%;  bottom: 8vh;  height: 64vh; z-index: 4; }
-.hp-l4 { left: 12%; bottom: 2vh;  height: 74vh; z-index: 5; }
-.hp-l5 { left: 20%; bottom: 0;    height: 82vh; z-index: 6; }
+/* 左サイド：外(L1)→ 内(L5)、外ほど小さく左端に */
+.hp-l1 { left: 0;   bottom: 0; height: 50vh; z-index: 2; }
+.hp-l2 { left: 5%;  bottom: 0; height: 58vh; z-index: 3; }
+.hp-l3 { left: 10%; bottom: 0; height: 66vh; z-index: 4; }
+.hp-l4 { left: 15%; bottom: 0; height: 74vh; z-index: 5; }
+.hp-l5 { left: 21%; bottom: 0; height: 82vh; z-index: 6; }
 
 /* ━━━ 中央メイン：最前面・最大・炎グロウ最強 ━━━ */
 .hp-c {
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
-  height: 91vh;
+  height: 92vh;
   z-index: 10;
 }
 
@@ -436,11 +434,11 @@ body {
     drop-shadow(0 10px 38px rgba(0,0,0,.99));
 }
 
-/* 右サイド：L側の鏡 */
-.hp-r1 { right: 20%; bottom: 0;    height: 82vh; z-index: 6; }
-.hp-r2 { right: 12%; bottom: 2vh;  height: 74vh; z-index: 5; }
-.hp-r3 { right: 7%;  bottom: 8vh;  height: 64vh; z-index: 4; }
-.hp-r4 { right: 2%;  bottom: 15vh; height: 54vh; z-index: 3; }
+/* 右サイド：内(R1)→ 外(R4)、外ほど小さく右端に */
+.hp-r1 { right: 21%; bottom: 0; height: 82vh; z-index: 6; }
+.hp-r2 { right: 15%; bottom: 0; height: 74vh; z-index: 5; }
+.hp-r3 { right: 10%; bottom: 0; height: 66vh; z-index: 4; }
+.hp-r4 { right: 5%;  bottom: 0; height: 58vh; z-index: 3; }
 
 /* ━━━ レスポンシブ ━━━ */
 
@@ -458,16 +456,16 @@ body {
 
 @media (max-width: 800px) {
   .hp-l1,.hp-l2,.hp-l3,.hp-r2,.hp-r3,.hp-r4 { display: none !important; }
-  .hp-l4 { left: 0; bottom: 0; height: 68vh; }
-  .hp-l5 { left: 22%; bottom: 0; height: 76vh; }
-  .hp-r1 { right: 22%; bottom: 0; height: 76vh; }
-  .hp-r2 { right: 0; bottom: 0; height: 68vh; }
+  .hp-l4 { left: 0; height: 66vh; }
+  .hp-l5 { left: 20%; height: 74vh; }
+  .hp-r1 { right: 20%; height: 74vh; }
+  .hp-r2 { right: 0; height: 66vh; }
 }
 
 @media (max-width: 580px) {
   .hp-l1,.hp-l2,.hp-l3,.hp-l4,.hp-r2,.hp-r3,.hp-r4 { display: none !important; }
-  .hp-l5 { left: 0; bottom: 0; height: 70vh; }
-  .hp-r1 { right: 0; bottom: 0; height: 70vh; }
+  .hp-l5 { left: 0; height: 68vh; }
+  .hp-r1 { right: 0; height: 68vh; }
   .hp-c  { height: 82vh; }
 }
 
