@@ -294,8 +294,10 @@ body {
 
 
 /* ═══════════════════════════════════════════════════════
-   PBS PLAYER COMPOSITE
+   PBS PLAYER COMPOSITE — 7人構成
    プロ野球スピリッツ風 — 選手が EIFER タイトルを囲む
+   player1.jpg（左端）〜 player7.jpg（右端）
+   player4.jpg が中央メイン・最前面
 ═══════════════════════════════════════════════════════ */
 
 .hero-players {
@@ -315,28 +317,28 @@ body {
   background-repeat: no-repeat;
   display: none; /* 写真が読み込まれたら JS が block に変える */
 
-  /* PBS フィルター処理：コントラスト強め・彩度アップ・赤いグロウ */
+  /* PBS フィルター：コントラスト強め・彩度アップ・赤いグロウ */
   filter:
     contrast(1.32)
     saturate(1.42)
     brightness(1.07)
-    drop-shadow(0 0 28px rgba(204,24,0,.70))
-    drop-shadow(0 8px 32px rgba(0,0,0,.96));
+    drop-shadow(0 0 26px rgba(204,24,0,.72))
+    drop-shadow(0 8px 30px rgba(0,0,0,.96));
 
   transition: opacity .5s ease;
 }
 
-/* 下端のフェードアウト（地面に溶け込む） */
+/* 下端フェード（地面に溶け込む） */
 .hp::after {
   content: '';
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 32%;
+  height: 30%;
   background: linear-gradient(to top, #060608 0%, transparent 100%);
   pointer-events: none;
 }
 
-/* 色統一オーバーレイ（昼・夜写真を赤トーンに揃える） */
+/* 赤トーン統一オーバーレイ */
 .hp::before {
   content: '';
   position: absolute;
@@ -345,77 +347,113 @@ body {
   pointer-events: none;
 }
 
-/* ── 左端（一番外側） ── */
+/* ━━━ 7人配置 左から順に ━━━
+   l1 → l2 → l3 →  [EIFER]  → r1 → r2 → r3
+                       ↑c（最前面）
+*/
+
+/* ── P1：左端外側 ── */
 .hp-l1 {
   left: 0;
-  width: clamp(90px, 17%, 220px);
-  height: 70vh;
-  clip-path: polygon(12% 0%, 100% 0%, 74% 100%, 0% 100%);
-  transform: rotate(-6deg);
+  width: clamp(70px, 14%, 180px);
+  height: 62vh;
+  clip-path: polygon(14% 0%, 100% 0%, 72% 100%, 0% 100%);
+  transform: rotate(-8deg);
   transform-origin: bottom left;
+  z-index: 2;
 }
 
-/* ── 左寄り ── */
+/* ── P2：左内側 ── */
 .hp-l2 {
-  left: clamp(70px, 14%, 190px);
-  width: clamp(105px, 20%, 255px);
-  height: 80vh;
-  clip-path: polygon(6% 0%, 100% 0%, 78% 100%, 0% 100%);
-  transform: rotate(-2.5deg);
+  left: clamp(50px, 11%, 150px);
+  width: clamp(85px, 16%, 205px);
+  height: 72vh;
+  clip-path: polygon(8% 0%, 100% 0%, 76% 100%, 0% 100%);
+  transform: rotate(-4deg);
   transform-origin: bottom center;
-  z-index: 3;
+  z-index: 2;
 }
 
-/* ── 中央メイン（PBS の表紙主役） ── */
+/* ── P3：左センター寄り ── */
+.hp-l3 {
+  left: clamp(110px, 22%, 285px);
+  width: clamp(100px, 18%, 230px);
+  height: 82vh;
+  clip-path: polygon(5% 0%, 100% 0%, 80% 100%, 0% 100%);
+  transform: rotate(-1.5deg);
+  transform-origin: bottom center;
+  z-index: 2;
+}
+
+/* ── P4：中央メイン（PBS 最前面・最大・最明るい） ── */
 .hp-c {
   left: 50%;
   transform: translateX(-50%);
-  width: clamp(120px, 23%, 290px);
-  height: 91vh;
-  z-index: 5; /* hero-inner(z:3) より前面 = タイトルに重なる PBS スタイル */
-  clip-path: polygon(4% 0%, 96% 0%, 100% 100%, 0% 100%);
+  width: clamp(115px, 21%, 270px);
+  height: 92vh;
+  z-index: 5;
+  clip-path: polygon(3% 0%, 97% 0%, 100% 100%, 0% 100%);
   filter:
-    contrast(1.40)
-    saturate(1.50)
-    brightness(1.12)
-    drop-shadow(0 0 55px rgba(220,40,0,.85))
-    drop-shadow(0 0 110px rgba(255,80,0,.30))
-    drop-shadow(0 10px 36px rgba(0,0,0,.99));
+    contrast(1.42)
+    saturate(1.55)
+    brightness(1.14)
+    drop-shadow(0 0 60px rgba(220,40,0,.90))
+    drop-shadow(0 0 120px rgba(255,80,0,.32))
+    drop-shadow(0 10px 40px rgba(0,0,0,.99));
 }
 
-/* ── 右寄り（左寄りの鏡） ── */
+/* ── P5：右センター寄り ── */
 .hp-r1 {
-  right: clamp(70px, 14%, 190px);
-  width: clamp(105px, 20%, 255px);
-  height: 80vh;
-  clip-path: polygon(0% 0%, 94% 0%, 100% 100%, 22% 100%);
-  transform: rotate(2.5deg);
+  right: clamp(110px, 22%, 285px);
+  width: clamp(100px, 18%, 230px);
+  height: 82vh;
+  clip-path: polygon(0% 0%, 95% 0%, 100% 100%, 20% 100%);
+  transform: rotate(1.5deg);
   transform-origin: bottom center;
-  z-index: 3;
+  z-index: 2;
 }
 
-/* ── 右端（左端の鏡） ── */
+/* ── P6：右内側 ── */
 .hp-r2 {
+  right: clamp(50px, 11%, 150px);
+  width: clamp(85px, 16%, 205px);
+  height: 72vh;
+  clip-path: polygon(0% 0%, 92% 0%, 100% 100%, 24% 100%);
+  transform: rotate(4deg);
+  transform-origin: bottom center;
+  z-index: 2;
+}
+
+/* ── P7：右端外側 ── */
+.hp-r3 {
   right: 0;
-  width: clamp(90px, 17%, 220px);
-  height: 70vh;
-  clip-path: polygon(0% 0%, 88% 0%, 100% 100%, 26% 100%);
-  transform: rotate(6deg);
+  width: clamp(70px, 14%, 180px);
+  height: 62vh;
+  clip-path: polygon(0% 0%, 86% 0%, 100% 100%, 28% 100%);
+  transform: rotate(8deg);
   transform-origin: bottom right;
+  z-index: 2;
 }
 
-/* ── レスポンシブ: タブレット（3人表示） ── */
+/* ── レスポンシブ: 1200px以下（5人：外側2枚を非表示） ── */
+@media (max-width: 1200px) {
+  .hp-l1, .hp-r3 { display: none !important; }
+  .hp-l2 { left: 0; }
+  .hp-r2 { right: 0; }
+}
+
+/* ── レスポンシブ: タブレット 900px以下（3人） ── */
 @media (max-width: 900px) {
-  .hp-l1, .hp-r2 { display: none !important; }
-  .hp-l2 { left: 0; width: clamp(90px, 27%, 210px); }
-  .hp-r1 { right: 0; width: clamp(90px, 27%, 210px); }
-  .hp-c  { width: clamp(110px, 32%, 240px); }
+  .hp-l1, .hp-l2, .hp-r2, .hp-r3 { display: none !important; }
+  .hp-l3 { left: 0; width: clamp(90px, 28%, 210px); }
+  .hp-r1 { right: 0; width: clamp(90px, 28%, 210px); }
+  .hp-c  { width: clamp(110px, 34%, 250px); }
 }
 
-/* ── レスポンシブ: スマホ（1人表示） ── */
-@media (max-width: 520px) {
-  .hp-l1, .hp-l2, .hp-r1, .hp-r2 { display: none !important; }
-  .hp-c { width: 60%; height: 75vh; }
+/* ── レスポンシブ: スマホ 540px以下（1人） ── */
+@media (max-width: 540px) {
+  .hp-l1,.hp-l2,.hp-l3,.hp-r1,.hp-r2,.hp-r3 { display: none !important; }
+  .hp-c { width: 62%; height: 76vh; }
 }
 .hero-label {
   font-size:0.65rem; letter-spacing:0.45em; color:var(--ember);
