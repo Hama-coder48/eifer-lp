@@ -78,7 +78,8 @@
       <div class="hp hp-l4" id="hp4"></div>
       <div class="hp hp-l5" id="hp5"></div>
       <!-- 右サイド：外側(背景) → 内側(前面) の DOM 順 -->
-      <div class="hp hp-r4" id="hp10"></div>
+      <div class="hp hp-ul"  id="hp10"></div>
+      <div class="hp hp-run" id="hp-run"></div>
       <div class="hp hp-r3" id="hp9"></div>
       <div class="hp hp-r2" id="hp8"></div>
       <div class="hp hp-r1" id="hp7"></div>
@@ -666,7 +667,8 @@
         { id:'hp7',  file:'player5.png'  },  // R1: メガネスイング（内右）
         { id:'hp8',  file:'player6.png'  },  // R2: 全力疾走
         { id:'hp9',  file:'player7.png'  },  // R3: シャカポーズ
-        { id:'hp10', file:'player10.png' },  // R4: 22番後ろ姿（外右）
+        { id:'hp10', file:'player10.png' },  // UL: 22番打者（左上フロート）
+        { id:'hp-run', file:'player_run.png' }, // UR: 走者躍動感（右上フロート）
       ];
       slots.forEach(({ id, file }) => {
         const el = document.getElementById(id);

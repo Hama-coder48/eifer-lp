@@ -440,6 +440,35 @@ body {
 .hp-r3 { right: 12%; bottom: 0; height: 70vh; z-index: 4; }
 .hp-r4 { right: 6%;  bottom: 0; height: 62vh; z-index: 3; }
 
+/* ━━━ 左上フロート：player10 #22打者（後ろ姿・躍動感） ━━━ */
+.hp-ul {
+  left: 1%;
+  bottom: 36vh;
+  height: 50vh;
+  z-index: 2;
+}
+.hp-ul img {
+  filter:
+    contrast(1.70) saturate(1.50) brightness(1.05)
+    drop-shadow(0 0 28px rgba(255,120,0,.55))
+    drop-shadow(0 8px 24px rgba(0,0,0,.90));
+}
+
+/* ━━━ 右上フロート：走者（躍動感・右から左へ疾走） ━━━ */
+.hp-run {
+  right: 1%;
+  bottom: 36vh;
+  height: 54vh;
+  z-index: 2;
+  transform: scaleX(-1);   /* 内側（左/中央）へ走る向きに */
+}
+.hp-run img {
+  filter:
+    contrast(1.75) saturate(1.55) brightness(1.08)
+    drop-shadow(0 0 30px rgba(255,100,0,.60))
+    drop-shadow(0 8px 26px rgba(0,0,0,.92));
+}
+
 /* ━━━ 副キャプテン(player7 = #hp9)：正キャプテンに並ぶ強調 ━━━ */
 #hp9 {
   height: 88vh;
@@ -471,6 +500,8 @@ body {
   .hp-r2 { right: 15%; }
   .hp-r3 { right: 9%;  }
   .hp-r4 { right: 4%;  }
+  .hp-ul  { height: 44vh; bottom: 32vh; }
+  .hp-run { height: 48vh; bottom: 32vh; }
 }
 
 /* 900px：L1 非表示、9人 */
@@ -485,11 +516,15 @@ body {
   .hp-r3 { right: 7%;  height: 65vh; }
   .hp-r4 { right: 0;   height: 58vh; }
   .hp-c  { height: 90vh; }
+  .hp-ul  { height: 38vh; bottom: 28vh; }
+  .hp-run { height: 42vh; bottom: 28vh; }
 }
 
-/* 720px：L1+L2、R4 非表示、7人 */
+/* 720px：L1+L2、R4 非表示、7人。フロートは小さく */
 @media (max-width: 720px) {
   .hp-l1, .hp-l2, .hp-r4 { display: none !important; }
+  .hp-ul  { height: 32vh; bottom: 24vh; }
+  .hp-run { height: 35vh; bottom: 24vh; }
   .hp-l3 { left: 0;    height: 60vh; }
   .hp-l4 { left: 8%;   height: 67vh; }
   .hp-l5 { left: 18%;  height: 75vh; }
@@ -499,10 +534,11 @@ body {
   .hp-c  { height: 86vh; }
 }
 
-/* 560px：5人 (L4, L5, C, R1, R2) */
+/* 560px：5人 (L4, L5, C, R1, R2)、フロートも非表示 */
 @media (max-width: 560px) {
   .hp-l1,.hp-l2,.hp-l3 { display: none !important; }
   .hp-r3,.hp-r4 { display: none !important; }
+  .hp-ul, .hp-run { display: none !important; }
   .hp-l4 { left: 0;    height: 60vh; }
   .hp-l5 { left: 14%;  height: 68vh; }
   .hp-r1 { right: 14%; height: 68vh; }
