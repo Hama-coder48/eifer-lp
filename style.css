@@ -407,19 +407,19 @@ body {
    中央デカく、外に行くほど小さく。プロスピパッケージ感。
 */
 
-/* 左サイド：外(L1)→ 内(L5)、外ほど小さく左端に */
-.hp-l1 { left: 0;   bottom: 0; height: 50vh; z-index: 2; }
-.hp-l2 { left: 5%;  bottom: 0; height: 58vh; z-index: 3; }
-.hp-l3 { left: 10%; bottom: 0; height: 66vh; z-index: 4; }
-.hp-l4 { left: 15%; bottom: 0; height: 74vh; z-index: 5; }
-.hp-l5 { left: 21%; bottom: 0; height: 82vh; z-index: 6; }
+/* 左サイド：外(L1) → 内(L5)  ヒーロー全幅を使って全員表示 */
+.hp-l1 { left: 0%;  bottom: 0; height: 54vh; z-index: 2; }
+.hp-l2 { left: 6%;  bottom: 0; height: 62vh; z-index: 3; }
+.hp-l3 { left: 12%; bottom: 0; height: 70vh; z-index: 4; }
+.hp-l4 { left: 18%; bottom: 0; height: 78vh; z-index: 5; }
+.hp-l5 { left: 25%; bottom: 0; height: 86vh; z-index: 6; }
 
 /* ━━━ 中央メイン：最前面・最大・炎グロウ最強 ━━━ */
 .hp-c {
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
-  height: 92vh;
+  height: 94vh;
   z-index: 10;
 }
 
@@ -434,45 +434,70 @@ body {
     drop-shadow(0 10px 38px rgba(0,0,0,.99));
 }
 
-/* 右サイド：内(R1)→ 外(R4)、外ほど小さく右端に */
-.hp-r1 { right: 21%; bottom: 0; height: 82vh; z-index: 6; }
-.hp-r2 { right: 15%; bottom: 0; height: 74vh; z-index: 5; }
-.hp-r3 { right: 10%; bottom: 0; height: 66vh; z-index: 4; }
-.hp-r4 { right: 5%;  bottom: 0; height: 58vh; z-index: 3; }
+/* 右サイド：内(R1) → 外(R4) */
+.hp-r1 { right: 25%; bottom: 0; height: 86vh; z-index: 6; }
+.hp-r2 { right: 18%; bottom: 0; height: 78vh; z-index: 5; }
+.hp-r3 { right: 12%; bottom: 0; height: 70vh; z-index: 4; }
+.hp-r4 { right: 6%;  bottom: 0; height: 62vh; z-index: 3; }
 
 /* ━━━ レスポンシブ ━━━ */
 
-@media (max-width: 1400px) {
-  .hp-l1, .hp-r4 { display: none !important; }
-  .hp-l2 { left: 0; }
-  .hp-r3 { right: 0; }
-}
-
+/* 1100px：横間隔を圧縮するが全10人表示 */
 @media (max-width: 1100px) {
-  .hp-l1, .hp-l2, .hp-r3, .hp-r4 { display: none !important; }
-  .hp-l3 { left: 0; }
-  .hp-r2 { right: 0; }
+  .hp-l2 { left: 4%;  }
+  .hp-l3 { left: 9%;  }
+  .hp-l4 { left: 15%; }
+  .hp-l5 { left: 22%; }
+  .hp-r1 { right: 22%; }
+  .hp-r2 { right: 15%; }
+  .hp-r3 { right: 9%;  }
+  .hp-r4 { right: 4%;  }
 }
 
-@media (max-width: 800px) {
-  .hp-l1,.hp-l2,.hp-l3,.hp-r2,.hp-r3,.hp-r4 { display: none !important; }
-  .hp-l4 { left: 0; height: 66vh; }
-  .hp-l5 { left: 20%; height: 74vh; }
-  .hp-r1 { right: 20%; height: 74vh; }
-  .hp-r2 { right: 0; height: 66vh; }
+/* 900px：L1 非表示、9人 */
+@media (max-width: 900px) {
+  .hp-l1 { display: none !important; }
+  .hp-l2 { left: 0;    height: 58vh; }
+  .hp-l3 { left: 7%;   height: 65vh; }
+  .hp-l4 { left: 14%;  height: 72vh; }
+  .hp-l5 { left: 22%;  height: 80vh; }
+  .hp-r1 { right: 22%; height: 80vh; }
+  .hp-r2 { right: 14%; height: 72vh; }
+  .hp-r3 { right: 7%;  height: 65vh; }
+  .hp-r4 { right: 0;   height: 58vh; }
+  .hp-c  { height: 90vh; }
 }
 
-@media (max-width: 580px) {
-  .hp-l1,.hp-l2,.hp-l3,.hp-l4,.hp-r2,.hp-r3,.hp-r4 { display: none !important; }
-  .hp-l5 { left: 0; height: 68vh; }
-  .hp-r1 { right: 0; height: 68vh; }
-  .hp-c  { height: 82vh; }
+/* 720px：L1+L2、R4 非表示、7人 */
+@media (max-width: 720px) {
+  .hp-l1, .hp-l2, .hp-r4 { display: none !important; }
+  .hp-l3 { left: 0;    height: 60vh; }
+  .hp-l4 { left: 8%;   height: 67vh; }
+  .hp-l5 { left: 18%;  height: 75vh; }
+  .hp-r1 { right: 18%; height: 75vh; }
+  .hp-r2 { right: 8%;  height: 67vh; }
+  .hp-r3 { right: 0;   height: 60vh; }
+  .hp-c  { height: 86vh; }
 }
 
-@media (max-width: 420px) {
-  .hp-l1,.hp-l2,.hp-l3,.hp-l4,.hp-l5,
-  .hp-r1,.hp-r2,.hp-r3,.hp-r4 { display: none !important; }
-  .hp-c { height: 76vh; }
+/* 560px：5人 (L4, L5, C, R1, R2) */
+@media (max-width: 560px) {
+  .hp-l1,.hp-l2,.hp-l3 { display: none !important; }
+  .hp-r3,.hp-r4 { display: none !important; }
+  .hp-l4 { left: 0;    height: 60vh; }
+  .hp-l5 { left: 14%;  height: 68vh; }
+  .hp-r1 { right: 14%; height: 68vh; }
+  .hp-r2 { right: 0;   height: 60vh; }
+  .hp-c  { height: 80vh; }
+}
+
+/* 400px：3人 (L5, C, R1) */
+@media (max-width: 400px) {
+  .hp-l1,.hp-l2,.hp-l3,.hp-l4 { display: none !important; }
+  .hp-r2,.hp-r3,.hp-r4 { display: none !important; }
+  .hp-l5 { left: 0;   height: 62vh; }
+  .hp-r1 { right: 0;  height: 62vh; }
+  .hp-c  { height: 76vh; }
 }
 .hero-label {
   font-size:0.65rem; letter-spacing:0.45em; color:var(--ember);
@@ -795,8 +820,9 @@ body {
 .insta-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 6px;
-  margin: 48px 0 36px;
+  gap: 5px;
+  max-width: 660px;
+  margin: 40px auto 28px;
 }
 .insta-post {
   aspect-ratio: 1;
@@ -804,8 +830,8 @@ body {
   position: relative;
   background: var(--card);
   border: 1px solid var(--border);
-  transition: transform 0.35s cubic-bezier(0.23,1,0.32,1), opacity 0.3s;
-  cursor: none;
+  transition: transform 0.3s cubic-bezier(0.23,1,0.32,1), box-shadow 0.3s;
+  cursor: pointer !important;
 }
 .insta-post img {
   width: 100%;
@@ -819,20 +845,119 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(6,6,8,0.18);
+  background: rgba(6,6,8,0.15);
   transition: background 0.3s;
   pointer-events: none;
 }
-.insta-post:hover { transform: scale(0.97); }
-.insta-post:hover img { transform: scale(1.06); }
-.insta-post:hover::after { background: rgba(204,24,0,0.12); }
+.insta-post:hover { transform: scale(0.95); box-shadow: 0 0 0 2px var(--red); }
+.insta-post:hover img { transform: scale(1.08); }
+.insta-post:hover::after { background: rgba(204,24,0,0.08); }
 .insta-cta { text-align: center; }
 
 @media (max-width: 700px) {
-  .insta-grid { grid-template-columns: repeat(3,1fr); gap: 4px; }
+  .insta-grid { max-width: 100%; gap: 4px; }
 }
-@media (max-width: 420px) {
-  .insta-grid { grid-template-columns: repeat(2,1fr); }
+@media (max-width: 460px) {
+  .insta-grid { grid-template-columns: repeat(5, 1fr); gap: 3px; }
+}
+
+
+/* ──────────────────────────────────────────────
+   LIGHTBOX
+────────────────────────────────────────────── */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.96);
+  z-index: 9500;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.lightbox.lb-open { display: flex; }
+
+.lb-img-wrap {
+  max-width: 90vw;
+  max-height: 82vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lbFadeIn 0.25s ease;
+}
+@keyframes lbFadeIn { from { opacity:0; transform:scale(0.95); } to { opacity:1; transform:scale(1); } }
+
+.lb-img {
+  max-width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  display: block;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.lb-close {
+  position: absolute;
+  top: 18px; right: 22px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.55);
+  font-size: 2rem;
+  line-height: 1;
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  transition: color 0.2s;
+  z-index: 1;
+}
+.lb-close:hover { color: var(--ember); }
+
+.lb-prev, .lb-next {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.6);
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  transition: all 0.2s;
+  z-index: 1;
+}
+.lb-prev { left: 14px; }
+.lb-next { right: 14px; }
+.lb-prev:hover, .lb-next:hover {
+  background: rgba(204,24,0,0.3);
+  border-color: var(--red);
+  color: var(--white);
+}
+.lb-prev:disabled, .lb-next:disabled { opacity: 0.2; pointer-events: none; }
+
+.lb-counter {
+  position: absolute;
+  bottom: 18px; left: 50%; transform: translateX(-50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  color: rgba(255,255,255,0.35);
+}
+
+.lb-dots {
+  position: absolute;
+  bottom: 40px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 6px; align-items: center;
+}
+.lb-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  transition: background 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.lb-dot.active { background: var(--ember); transform: scale(1.5); }
+
+@media (max-width: 600px) {
+  .lb-prev { left: 4px; }
+  .lb-next { right: 4px; }
+  .lb-prev, .lb-next { width: 36px; height: 36px; font-size: 1.1rem; }
+  .lb-img-wrap { max-width: 96vw; }
 }
 
 

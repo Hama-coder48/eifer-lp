@@ -301,7 +301,7 @@
       <p class="section-eyebrow center animate-in">INSTAGRAM</p>
       <h2 class="section-heading center split-text animate-in">試合の熱量、リアルタイムで。</h2>
       <p class="section-desc center animate-in">グラウンドの汗と興奮をそのまま発信中。<br>フォローして最新の試合情報をチェック。</p>
-      <div class="insta-grid animate-in">
+      <div class="insta-grid animate-in" id="insta-grid">
         <div class="insta-post"><img src="images/players/player1.jpg" alt="EIFER 投球シーン" loading="lazy"></div>
         <div class="insta-post"><img src="images/players/player2.jpg" alt="EIFER 守備シーン" loading="lazy"></div>
         <div class="insta-post"><img src="images/players/player3.jpg" alt="EIFER バッティング" loading="lazy"></div>
@@ -345,6 +345,18 @@
       <a href="https://www.instagram.com/eifer2017hirakata" target="_blank" class="btn-fire btn-large mag-btn">Instagram DMで連絡する</a>
     </div>
   </section>
+
+  <!-- PHOTO LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lb-close" id="lb-close" aria-label="閉じる">&#x2715;</button>
+    <button class="lb-prev"  id="lb-prev"  aria-label="前の写真">&#8592;</button>
+    <div class="lb-img-wrap">
+      <img class="lb-img" id="lb-img" src="" alt="">
+    </div>
+    <button class="lb-next"  id="lb-next"  aria-label="次の写真">&#8594;</button>
+    <div class="lb-dots"    id="lb-dots"></div>
+    <div class="lb-counter" id="lb-counter">1 / 10</div>
+  </div>
 
   <footer>
     <div class="footer-inner">
@@ -679,7 +691,80 @@
 
 
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       12. GLITCH EFFECT
+       12. PHOTO LIGHTBOX
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    (() => {
+      const lb       = document.getElementById('lightbox');
+      const lbImg    = document.getElementById('lb-img');
+      const lbCnt    = document.getElementById('lb-counter');
+      const lbClose  = document.getElementById('lb-close');
+      const lbPrev   = document.getElementById('lb-prev');
+      const lbNext   = document.getElementById('lb-next');
+      const lbDots   = document.getElementById('lb-dots');
+      if(!lb) return;
+
+      const posts = Array.from(document.querySelectorAll('#insta-grid .insta-post'));
+      const total = posts.length;
+      let cur = 0;
+
+      // build dots
+      posts.forEach((_, i) => {
+        const d = document.createElement('span');
+        d.className = 'lb-dot' + (i===0 ? ' active' : '');
+        d.addEventListener('click', () => go(i));
+        lbDots.appendChild(d);
+      });
+
+      function updateDots(){
+        lbDots.querySelectorAll('.lb-dot').forEach((d,i) => d.classList.toggle('active', i===cur));
+      }
+
+      function go(i){
+        cur = (i + total) % total;
+        const src = posts[cur].querySelector('img').src;
+        const alt = posts[cur].querySelector('img').alt;
+        lbImg.style.opacity = '0';
+        setTimeout(() => {
+          lbImg.src = src;
+          lbImg.alt = alt;
+          lbImg.style.opacity = '1';
+        }, 120);
+        lbCnt.textContent = `${cur + 1} / ${total}`;
+        updateDots();
+      }
+
+      function openLb(i){
+        cur = i;
+        go(cur);
+        lb.classList.add('lb-open');
+        lb.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeLb(){
+        lb.classList.remove('lb-open');
+        lb.setAttribute('aria-hidden','true');
+        document.body.style.overflow = '';
+      }
+
+      posts.forEach((p, i) => p.addEventListener('click', () => openLb(i)));
+      lbClose.addEventListener('click', closeLb);
+      lbPrev.addEventListener('click', () => go(cur - 1));
+      lbNext.addEventListener('click', () => go(cur + 1));
+      lb.addEventListener('click', e => { if(e.target === lb) closeLb(); });
+      document.addEventListener('keydown', e => {
+        if(!lb.classList.contains('lb-open')) return;
+        if(e.key === 'Escape')      closeLb();
+        if(e.key === 'ArrowLeft')   go(cur - 1);
+        if(e.key === 'ArrowRight')  go(cur + 1);
+      });
+
+      // add transition style to img
+      lbImg.style.transition = 'opacity 0.12s ease';
+    })();
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       13. GLITCH EFFECT
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     setTimeout(() => {
       const t = document.querySelector('.glitch');
